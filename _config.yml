@@ -13,8 +13,18 @@ author:
   url: https://github.com
 
 # Build Settings
-theme: jekyll-theme-slate
-remote_theme: pages-themes/slate@v0.2.0
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+# Just the Docs Configuration
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+mermaid:
+  version: "10"
+
+# Auxiliary Links
+aux_links:
+  "Repository": "https://github.com/SaravananRajaraman/Prompt2Production"
 
 # Markdown Settings
 markdown: kramdown
@@ -31,10 +41,6 @@ permalink: /:title/
 
 # Collections
 collections_dir: collections
-
-# Include/Exclude
-include:
-  - _pages
 
 # Output
 safe: false

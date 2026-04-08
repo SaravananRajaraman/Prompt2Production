@@ -1,3 +1,9 @@
+---
+layout: default
+title: FAQ for Beginners
+nav_order: 5
+---
+
 # FAQ for GitHub Copilot Beginners
 
 > Quick answers to the questions new Copilot users ask most often. Practical, jargon-free, actionable.

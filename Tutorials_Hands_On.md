@@ -1,3 +1,9 @@
+---
+layout: default
+title: Hands-On Tutorials
+nav_order: 6
+---
+
 # Hands-On Tutorials: Learn by Doing
 
 > Three guided walkthroughs. You'll learn GitHub Copilot by actually using it. Each tutorial is 10-15 minutes.

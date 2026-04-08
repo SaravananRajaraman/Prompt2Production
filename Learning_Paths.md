@@ -1,3 +1,9 @@
+---
+layout: default
+title: Learning Paths
+nav_order: 2
+---
+
 # Learning Paths: Choose Your Adventure
 
 > Different goals, different starting points. Pick the path that matches your situation, follow it, and level up.

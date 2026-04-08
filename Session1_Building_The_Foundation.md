@@ -1,3 +1,9 @@
+---
+layout: default
+title: Session 1 - Building the Foundation
+nav_order: 3
+---
+
 # Session 1: Building the Foundation
 
 `[FOUNDATIONAL]` - Start here if you're learning Copilot. Master the basics before moving to Session 2.

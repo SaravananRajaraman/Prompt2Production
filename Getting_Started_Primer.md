@@ -1,3 +1,9 @@
+---
+layout: default
+title: Getting Started Primer
+nav_order: 1
+---
+
 # Getting Started with GitHub Copilot - 5 Minute Primer
 
 > **New to GitHub Copilot?** Start here. This guide teaches you the three core interaction modes and gets you writing your first prompt in under 5 minutes.

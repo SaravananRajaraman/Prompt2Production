@@ -1,3 +1,9 @@
+---
+layout: default
+title: Session 2 - Advanced Agent Capabilities
+nav_order: 4
+---
+
 # Session 2: Advanced Agent Capabilities
 
 `[ADVANCED]` - Requires understanding Session 1 first. Skip this if you're new to Copilot.

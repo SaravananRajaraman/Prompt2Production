@@ -8,6 +8,21 @@
 
 Take 10 seconds to find yourself:
 
+```mermaid
+flowchart TD
+    A["Choose Your Starting Point"] --> B{"What's your experience?"}
+    B -->|"New to Copilot"| Path1["🟢 Path 1: Brand New<br/>Learn the basics"]
+    B -->|"Know Ask Mode"| Path2["🔵 Path 2: Level Up<br/>Master all three modes"]
+    B -->|"Advanced User"| Path3["🔴 Path 3: Advanced<br/>Build production systems"]
+    Path1 --> Learn1["5-min Primer → Tutorials<br/>→ Session 1"]
+    Path2 --> Learn2["Ask Mode Deep Dive<br/>→ Plan & Agent Modes<br/>→ Customization"]
+    Path3 --> Learn3["Multi-Agent Orchestration<br/>→ Session 2<br/>→ Production Patterns"]
+    style A fill:#e1f5ff
+    style Path1 fill:#c8e6c9
+    style Path2 fill:#bbdefb
+    style Path3 fill:#ffccbc
+```
+
 ### Path 1: "I'm Brand New to GitHub Copilot"
 You've never used Copilot. You may or may not have heard of it. You want to understand what it is, play with it a bit, and get the basics right.
 

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="sidebar-shell">
+            {% include sidebar.html %}
+          </div>
+        </div>
+        <div class="col-md-7 main-content">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+    {% include mermaid.html %}
+  </body>
+</html>

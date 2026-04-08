@@ -1,0 +1,42 @@
+# Jekyll Site Configuration
+# GitHub Pages with Mermaid Support
+
+# Site Settings
+title: Prompt2Production
+tagline: "Low Code or No Code · Prompt to Production"
+description: >
+  Comprehensive guides and hands-on tutorials for mastering GitHub Copilot—
+  from your first prompt to building production workflows with multi-agent orchestration.
+
+author:
+  name: Prompt2Production Contributors
+  url: https://github.com
+
+# Build Settings
+theme: jekyll-theme-slate
+remote_theme: pages-themes/slate@v0.2.0
+
+# Markdown Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-github-metadata
+
+# Permalink Structure
+permalink: /:title/
+
+# Collections
+collections_dir: collections
+
+# Include/Exclude
+include:
+  - _pages
+
+# Output
+safe: false
+lsi: false
+incremental: false

@@ -1,0 +1,2066 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn and skill up with GitHub Copilot — from Ask to multi-agent orchestration">
+      
+      
+      
+        <link rel="canonical" href="https://SaravananRajaraman.github.io/Prompt2Production/FAQ_For_Beginners/">
+      
+      
+        <link rel="prev" href="../Tutorials_Hands_On/">
+      
+      
+        <link rel="next" href="../All_Links/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FAQ for Beginners - Prompt2Production</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-for-github-copilot-beginners" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Prompt2Production" class="md-header__button md-logo" aria-label="Prompt2Production" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Prompt2Production
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ for Beginners
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SaravananRajaraman/Prompt2Production" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Prompt2Production
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting_Started_Primer/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Learning_Paths/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Learning Paths
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Session1_Building_The_Foundation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Session 1 — Foundation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Session2_Advanced_Agent_Capabilities/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Session 2 — Advanced
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Tutorials_Hands_On/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorials
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../All_Links/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  All Links
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Prompt2Production" class="md-nav__button md-logo" aria-label="Prompt2Production" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Prompt2Production
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SaravananRajaraman/Prompt2Production" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Prompt2Production
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting_Started_Primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Learning_Paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session1_Building_The_Foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 1 — Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session2_Advanced_Agent_Capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 2 — Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials_Hands_On/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-ive-never-used-github-copilot-where-do-i-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: I've never used GitHub Copilot. Where do I start?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-do-i-need-to-install-anything-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Do I need to install anything special?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-is-github-copilot-the-same-as-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is GitHub Copilot the same as ChatGPT?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ask-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Ask Mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💬 Ask Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-what-does-ask-mode-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What does "Ask Mode" mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-open-ask-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I open Ask Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-when-should-i-use-ask-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: When should I use Ask Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-my-suggestion-looks-wrong-what-do-i-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: My suggestion looks wrong. What do I do?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-what-does-workspace-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What does @workspace do?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Plan Mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Plan Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-the-difference-between-ask-and-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's the difference between Ask and Plan?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-when-should-i-use-plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: When should I use Plan Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-use-plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I use Plan Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-edit-the-plan-after-copilot-generates-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I edit the plan after Copilot generates it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤖 Agent Mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤖 Agent Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's Agent Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-when-should-i-use-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: When should I use Agent Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-is-agent-mode-safe-can-it-break-my-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is Agent Mode safe? Can it break my code?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-use-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I use Agent Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Customization &amp; Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Customization &amp; Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-customize-copilot-for-my-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I customize Copilot for my team?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's "Context Engineering"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-context-rot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's "Context Rot"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🐛 Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-copilot-is-giving-me-bad-suggestions-how-do-i-fix-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Copilot is giving me bad suggestions. How do I fix it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-copilot-wont-load-whats-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Copilot won't load. What's wrong?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-use-copilot-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I use Copilot offline?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-framework-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        � POWER Framework Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="� POWER Framework Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-bad-vs-good-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Bad vs. Good Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-real-world-power-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Real-World POWER Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-using-power-in-plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Using POWER in Plan Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-is-there-a-structured-learning-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is there a structured learning path?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-where-can-i-find-more-examples-and-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Where can I find more examples and tutorials?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-know-if-im-using-copilot-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I know if I'm using Copilot well?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Still Stuck?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../All_Links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-ive-never-used-github-copilot-where-do-i-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: I've never used GitHub Copilot. Where do I start?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-do-i-need-to-install-anything-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Do I need to install anything special?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-is-github-copilot-the-same-as-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is GitHub Copilot the same as ChatGPT?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ask-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Ask Mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💬 Ask Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-what-does-ask-mode-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What does "Ask Mode" mean?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-open-ask-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I open Ask Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-when-should-i-use-ask-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: When should I use Ask Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-my-suggestion-looks-wrong-what-do-i-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: My suggestion looks wrong. What do I do?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-what-does-workspace-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What does @workspace do?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Plan Mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Plan Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-the-difference-between-ask-and-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's the difference between Ask and Plan?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-when-should-i-use-plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: When should I use Plan Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-use-plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I use Plan Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-edit-the-plan-after-copilot-generates-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I edit the plan after Copilot generates it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤖 Agent Mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤖 Agent Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's Agent Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-when-should-i-use-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: When should I use Agent Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-is-agent-mode-safe-can-it-break-my-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is Agent Mode safe? Can it break my code?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-use-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I use Agent Mode?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Customization &amp; Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Customization &amp; Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-customize-copilot-for-my-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I customize Copilot for my team?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's "Context Engineering"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-whats-context-rot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What's "Context Rot"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🐛 Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-copilot-is-giving-me-bad-suggestions-how-do-i-fix-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Copilot is giving me bad suggestions. How do I fix it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-copilot-wont-load-whats-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Copilot won't load. What's wrong?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-use-copilot-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I use Copilot offline?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-framework-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        � POWER Framework Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="� POWER Framework Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-bad-vs-good-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Bad vs. Good Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-real-world-power-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Real-World POWER Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-using-power-in-plan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Using POWER in Plan Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-is-there-a-structured-learning-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Is there a structured learning path?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-where-can-i-find-more-examples-and-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Where can I find more examples and tutorials?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-know-if-im-using-copilot-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I know if I'm using Copilot well?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Still Stuck?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="faq-for-github-copilot-beginners">FAQ for GitHub Copilot Beginners<a class="headerlink" href="#faq-for-github-copilot-beginners" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Quick answers to the questions new Copilot users ask most often. Practical, jargon-free, actionable.</p>
+</blockquote>
+<hr />
+<h2 id="getting-started">🚀 Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="q-ive-never-used-github-copilot-where-do-i-start">Q: I've never used GitHub Copilot. Where do I start?<a class="headerlink" href="#q-ive-never-used-github-copilot-where-do-i-start" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Start here → <a href="../Getting_Started_Primer/">Getting_Started_Primer.md</a>. Read it in 5 minutes, then try Ask mode. That's it.</p>
+<p>After that, choose a <a href="../Learning_Paths/">Learning_Path</a> based on what you want to learn.</p>
+<hr />
+<h3 id="q-do-i-need-to-install-anything-special">Q: Do I need to install anything special?<a class="headerlink" href="#q-do-i-need-to-install-anything-special" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> You need:
+1. VS Code (free)
+2. GitHub Copilot extension (free with GitHub account, or paid subscription for more usage)
+3. A GitHub account (free)</p>
+<p>That's it. Install the extension from the VS Code marketplace and sign in with GitHub.</p>
+<hr />
+<h3 id="q-is-github-copilot-the-same-as-chatgpt">Q: Is GitHub Copilot the same as ChatGPT?<a class="headerlink" href="#q-is-github-copilot-the-same-as-chatgpt" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> No, but they use similar AI models under the hood.</p>
+<p><strong>Difference:</strong>
+- <strong>ChatGPT</strong>: Web-based chat, general purpose, doesn't see your code
+- <strong>Copilot</strong>: Built into VS Code, sees your codebase, context-aware, designed for coding</p>
+<p>Think of it as ChatGPT+context+IDE integration.</p>
+<hr />
+<h2 id="ask-mode">💬 Ask Mode<a class="headerlink" href="#ask-mode" title="Permanent link">&para;</a></h2>
+<h3 id="q-what-does-ask-mode-mean">Q: What does "Ask Mode" mean?<a class="headerlink" href="#q-what-does-ask-mode-mean" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> It's just chat with Copilot, right in VS Code. You type a question; it replies. Like texting a coding expert sitting next to you.</p>
+<h3 id="q-how-do-i-open-ask-mode">Q: How do I open Ask Mode?<a class="headerlink" href="#q-how-do-i-open-ask-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong>
+- <strong>Windows/Linux:</strong> Press <code>Ctrl + I</code> (in-editor) or <code>Ctrl + Alt + I</code> (inline)
+- <strong>Mac:</strong> Press <code>Cmd + I</code></p>
+<p>Or click the Copilot icon in the activity bar (left sidebar of VS Code).</p>
+<hr />
+<h3 id="q-when-should-i-use-ask-mode">Q: When should I use Ask Mode?<a class="headerlink" href="#q-when-should-i-use-ask-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Use Ask when you need <strong>quick answers</strong>:
+- ✅ "What does this error mean?"
+- ✅ "Explain how Promise.all() works"
+- ✅ "Write a regex for email validation"
+- ✅ "How do I test async code?"</p>
+<p><strong>Don't use Ask for:</strong> Big features or multi-file refactors → use Plan or Agent instead.</p>
+<hr />
+<h3 id="q-my-suggestion-looks-wrong-what-do-i-do">Q: My suggestion looks wrong. What do I do?<a class="headerlink" href="#q-my-suggestion-looks-wrong-what-do-i-do" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Three options:</p>
+<ol>
+<li><strong>Ask for clarification:</strong> Type "Why did you suggest X? Wouldn't Y be better?" and iterate.</li>
+<li><strong>Provide more context:</strong> Type your question again with more details: "@workspace where do we handle authentication in this codebase?"</li>
+<li><strong>Use debug view:</strong> Command Palette → "Toggle Chat Debug View" to see exactly what Copilot saw.</li>
+</ol>
+<p><strong>Rule of thumb:</strong> If it looks wrong, it probably is. Always review and test before shipping.</p>
+<hr />
+<h3 id="q-what-does-workspace-do">Q: What does <code>@workspace</code> do?<a class="headerlink" href="#q-what-does-workspace-do" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> It tells Copilot to include your <strong>entire project</strong> in context, not just the current file.</p>
+<p><strong>Examples:</strong>
+- <code>@workspace what authentication pattern do we use?</code> - Copilot searches all your code
+- <code>@workspace where should I add a dark mode toggle?</code> - Copilot understands your full structure</p>
+<p>Use <code>@workspace</code> when you need project-wide context.</p>
+<hr />
+<h2 id="plan-mode">📋 Plan Mode<a class="headerlink" href="#plan-mode" title="Permanent link">&para;</a></h2>
+<h3 id="q-whats-the-difference-between-ask-and-plan">Q: What's the difference between Ask and Plan?<a class="headerlink" href="#q-whats-the-difference-between-ask-and-plan" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ask</th>
+<th>Plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Quick answer"</td>
+<td>"Create a detailed roadmap"</td>
+</tr>
+<tr>
+<td>You see a response</td>
+<td>You see numbered steps to follow</td>
+</tr>
+<tr>
+<td>Immediate</td>
+<td>Slower, more thorough</td>
+</tr>
+<tr>
+<td>Single question</td>
+<td>Multi-phase workflow</td>
+</tr>
+<tr>
+<td><strong>Use for:</strong> Quick code snippets</td>
+<td><strong>Use for:</strong> Feature design</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="q-when-should-i-use-plan-mode">Q: When should I use Plan Mode?<a class="headerlink" href="#q-when-should-i-use-plan-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Use Plan when:
+- ✅ Starting a new feature and uncertain how to approach it
+- ✅ Refactoring a large section and want to align first
+- ✅ You want Copilot to think through the whole approach before coding
+- ✅ You want to review and approve before implementation</p>
+<p><strong>Don't use Plan for:</strong> Small, obvious changes (Ask mode is faster).</p>
+<hr />
+<h3 id="q-how-do-i-use-plan-mode">Q: How do I use Plan Mode?<a class="headerlink" href="#q-how-do-i-use-plan-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong></p>
+<ol>
+<li>Open chat (Ctrl+I)</li>
+<li>Type: <code>/plan</code> (slash-plan)</li>
+<li>Describe what you want: "Add a dark mode toggle to the settings page"</li>
+<li>Review the numbered plan Copilot creates</li>
+<li>Ask for changes if needed: "Can you combine steps 3 and 4?"</li>
+<li>Click "Approve plan" or "Implement this plan"</li>
+<li>Copilot writes the code</li>
+</ol>
+<hr />
+<h3 id="q-can-i-edit-the-plan-after-copilot-generates-it">Q: Can I edit the plan after Copilot generates it?<a class="headerlink" href="#q-can-i-edit-the-plan-after-copilot-generates-it" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Yes! That's the whole point of Plan mode. If the plan doesn't look right, tell Copilot:
+- "Reverse the order of steps 2 and 3"
+- "Add a step for writing tests"
+- "Don't use Redux; use Context API instead"</p>
+<p>Edit the plan until you agree with it, then approve.</p>
+<hr />
+<h2 id="agent-mode">🤖 Agent Mode<a class="headerlink" href="#agent-mode" title="Permanent link">&para;</a></h2>
+<h3 id="q-whats-agent-mode">Q: What's Agent Mode?<a class="headerlink" href="#q-whats-agent-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Copilot works autonomously. You give a high-level goal; it:
+- Creates/edits files
+- Runs terminal commands
+- Sees the output
+- Fixes errors
+- Keeps looping until done</p>
+<p>You stay in the editor, reviewing each decision.</p>
+<hr />
+<h3 id="q-when-should-i-use-agent-mode">Q: When should I use Agent Mode?<a class="headerlink" href="#q-when-should-i-use-agent-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Use Agent when:
+- ✅ Complex multi-file changes (entire feature, refactor)
+- ✅ Writing test suites
+- ✅ Creating boilerplate scaffolding
+- ✅ You're confident what you want, just want faster execution
+- ✅ Task requires running commands (tests, builds, installs)</p>
+<p><strong>Don't use Agent for:</strong> Simple one-file changes (Ask mode is faster).</p>
+<hr />
+<h3 id="q-is-agent-mode-safe-can-it-break-my-code">Q: Is Agent Mode safe? Can it break my code?<a class="headerlink" href="#q-is-agent-mode-safe-can-it-break-my-code" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Agent mode is safe-ish:
+- ✅ It can only edit files you open in VS Code
+- ✅ You review every change before it's committed
+- ✅ You can undo (Ctrl+Z)
+- ✅ You can stop it at any time</p>
+<p><strong>Recommendation:</strong> Commit your code before using Agent mode, so you can revert if something goes wrong.</p>
+<hr />
+<h3 id="q-how-do-i-use-agent-mode">Q: How do I use Agent Mode?<a class="headerlink" href="#q-how-do-i-use-agent-mode" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong></p>
+<ol>
+<li>Open chat (Ctrl+I)</li>
+<li>Press Ctrl+I again or click the "Agent" button</li>
+<li>Describe what you want: "Create a new API endpoint for user login"</li>
+<li>Review each change Copilot suggests</li>
+<li>Click "Approve" or "Make change"</li>
+<li>Let it work; it handles multiple files, tests, etc.</li>
+</ol>
+<hr />
+<h2 id="customization-advanced">🔧 Customization &amp; Advanced<a class="headerlink" href="#customization-advanced" title="Permanent link">&para;</a></h2>
+<h3 id="q-can-i-customize-copilot-for-my-team">Q: Can I customize Copilot for my team?<a class="headerlink" href="#q-can-i-customize-copilot-for-my-team" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Yes! This is advanced but powerful:</p>
+<ul>
+<li><strong>Custom Instructions</strong> (<code>.instructions.md</code>) - Tell Copilot your coding style, practices, tech stack</li>
+<li><strong>Prompt Files</strong> (<code>.prompt.md</code>) - Reusable templates for common tasks</li>
+<li><strong>Custom Agents</strong> (<code>.agent.md</code>) - Specialized AI personas for different roles (Security agent, Testing agent, etc.)</li>
+</ul>
+<p><strong>Example:</strong> Create a <code>.instructions.md</code> file in your project root:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># Project: E-Commerce Backend</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gu">## Stack</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">-</span><span class="w"> </span>Node.js 18, Express.js, TypeScript strict mode
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">-</span><span class="w"> </span>Database: PostgreSQL with Prisma ORM
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">-</span><span class="w"> </span>Testing: Jest with 80%+ coverage requirement
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gu">## Code Standards</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">-</span><span class="w"> </span>All API responses use { data, error } shape
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">-</span><span class="w"> </span>Error handling: never throw, always return error in response
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>All functions: JSDoc comments required
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>All routes: must have authorization checks
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="gu">## Naming Conventions</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">-</span><span class="w"> </span>Database tables: plural (users, products, orders)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">-</span><span class="w"> </span>API endpoints: RESTful (POST /users, GET /users/:id)
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">-</span><span class="w"> </span>Environment variables: SCREAMING_SNAKE_CASE
+</code></pre></div>
+<p><strong>Result:</strong> Every time you ask Copilot for code, it automatically follows these standards without you typing them each time.</p>
+<hr />
+<h3 id="q-whats-context-engineering">Q: What's "Context Engineering"?<a class="headerlink" href="#q-whats-context-engineering" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Fancy way of saying: <strong>designing what Copilot sees</strong> to get better results.</p>
+<p>Simple example:
+- ❌ Bad: "Write a function" (Copilot doesn't know your style)
+- ✅ Good: "Write a function using TypeScript with error handling and JSDoc comments, following our team's naming conventions" (Copilot knows exactly what you want)</p>
+<p>More context → better, faster suggestions.</p>
+<hr />
+<h3 id="q-whats-context-rot">Q: What's "Context Rot"?<a class="headerlink" href="#q-whats-context-rot" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> When your chat conversation gets so long that:
+1. Old messages aren't relevant anymore
+2. Copilot gets confused (too much to read)
+3. Responses slow down
+4. Quality degrades</p>
+<p><strong>Solution:</strong> Start a fresh chat after ~20-30 exchanges. Real work typically spans multiple focused chats, not one epic conversation.</p>
+<hr />
+<h2 id="troubleshooting">🐛 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="q-copilot-is-giving-me-bad-suggestions-how-do-i-fix-it">Q: Copilot is giving me bad suggestions. How do I fix it?<a class="headerlink" href="#q-copilot-is-giving-me-bad-suggestions-how-do-i-fix-it" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Try these (in order):</p>
+<ol>
+<li><strong>Be more specific:</strong> Instead of "write a function," say "write a function that validates email format using regex"</li>
+<li><strong>Add context:</strong> Use <code>@workspace</code> to give project context</li>
+<li><strong>Reference files:</strong> Type <code>#file:config.ts</code> to tell Copilot to include that file</li>
+<li><strong>Check debug view:</strong> Command Palette → "Toggle Chat Debug View" to see what Copilot actually sees</li>
+<li><strong>Start fresh chat:</strong> If the conversation is long, start a new one</li>
+</ol>
+<hr />
+<h3 id="q-copilot-wont-load-whats-wrong">Q: Copilot won't load. What's wrong?<a class="headerlink" href="#q-copilot-wont-load-whats-wrong" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Check:
+- ✅ GitHub Copilot extension is installed
+- ✅ You're signed in (Copilot icon shows your avatar)
+- ✅ You have an active GitHub Copilot subscription (or free trial)
+- ✅ Your internet connection is working
+- ✅ Try restarting VS Code</p>
+<p>Still broken? Check the official <a href="https://www.githubstatus.com/">GitHub Copilot Status Page</a>.</p>
+<hr />
+<h3 id="q-can-i-use-copilot-offline">Q: Can I use Copilot offline?<a class="headerlink" href="#q-can-i-use-copilot-offline" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> No. Copilot requires internet to communicate with GitHub's servers. It's cloud-based.</p>
+<hr />
+<h2 id="power-framework-examples">� POWER Framework Examples<a class="headerlink" href="#power-framework-examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-bad-vs-good-prompt">Example 1: Bad vs. Good Prompt<a class="headerlink" href="#example-1-bad-vs-good-prompt" title="Permanent link">&para;</a></h3>
+<p><strong>❌ Bad (vague):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Write a function
+</code></pre></div></p>
+<p><strong>✅ Good (POWER applied):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You are a senior backend engineer. Write a TypeScript function that validates HTTP request headers for security.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>The function should check for: Content-Type, Authorization, and X-Request-ID headers.
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>It should throw an error if any required header is missing.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Use strict TypeScript types. Include JSDoc comments.
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Return a boolean indicating whether all headers are valid.
+</code></pre></div></p>
+<p><strong>What changed:</strong>
+- <strong>P (Purpose):</strong> Specific goal = validate HTTP headers
+- <strong>O (Operating Context):</strong> Backend engineer, TypeScript, HTTP requests
+- <strong>W (What Constraints):</strong> Check specific headers, throw on missing, strict types
+- <strong>E (Expected Format):</strong> Boolean return, JSDoc comments
+- <strong>R (Role &amp; Tone):</strong> Senior engineer mindset</p>
+<h3 id="example-2-real-world-power-prompt">Example 2: Real-World POWER Prompt<a class="headerlink" href="#example-2-real-world-power-prompt" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> You want to refactor a messy authentication function</p>
+<p><strong>❌ Without POWER:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Fix this authentication code
+</code></pre></div></p>
+<p><strong>✅ With POWER:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>You are a security-focused TypeScript architect. I need to refactor this authentication function following JWT best practices.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Context: We&#39;re using Express.js with Node.js 18, PostgreSQL for user storage, and jsonwebtoken v9.
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Constraints:
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>- Must validate JWT tokens
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>- Must handle expired tokens gracefully  
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>- Must check user roles (admin, user, guest)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>- Security: never expose secret keys in logs
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>- Use TypeScript strict mode
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Expected output: Refactored function with:
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>1. Type-safe JWT payload
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>2. Error handling for each failure case
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>3. JSDoc explaining parameters and return types
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>Role: Think like someone implementing OAuth2 standards, not a quick-and-dirty solution.
+</code></pre></div></p>
+<p><strong>Result:</strong> Copilot now generates production-grade code instead of a hack.</p>
+<h3 id="example-3-using-power-in-plan-mode">Example 3: Using POWER in Plan Mode<a class="headerlink" href="#example-3-using-power-in-plan-mode" title="Permanent link">&para;</a></h3>
+<p><strong>The scenario:</strong> You want to add dark mode to your React app</p>
+<p><strong>❌ Without structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Add dark mode
+</code></pre></div></p>
+<p><strong>✅ With POWER (in Plan mode, type <code>/plan</code> first):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>You are a senior React architect. Plan how to add dark mode to our Next.js 14 app.
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Context:
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>- Frontend: Next.js 14 with App Router
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>- Styling: Tailwind CSS
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>- State management: React Context API
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>- Target browsers: Chrome, Firefox, Safari (last 2 versions)
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Constraints:
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>- Must persist user preference to browser localStorage
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>- Must respect system dark mode preference as default
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>- Must not cause flash of wrong theme on page load  
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>- All pages must support both light and dark modes
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Expected output: A numbered implementation plan with:
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>1. Setup steps first
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>2. Component changes
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>3. Testing steps
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>4. Deployment considerations
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Role: Think like you&#39;re planning this for a large team, with details a junior dev can follow.
+</code></pre></div></p>
+<p>Copilot now generates a clear, step-by-step, team-ready plan.</p>
+<hr />
+<h3 id="q-is-there-a-structured-learning-path">Q: Is there a structured learning path?<a class="headerlink" href="#q-is-there-a-structured-learning-path" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Yes! See <a href="../Learning_Paths/">Learning_Paths.md</a> for three paths:
+- "I'm brand new" - Start simple, build skills
+- "I want advanced stuff" - Skip basics, jump to orchestration
+- "I want quick answers" - FAQ-focused</p>
+<hr />
+<h3 id="q-where-can-i-find-more-examples-and-tutorials">Q: Where can I find more examples and tutorials?<a class="headerlink" href="#q-where-can-i-find-more-examples-and-tutorials" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Check:
+1. <a href="../Getting_Started_Primer/">Getting_Started_Primer.md</a> - 5-minute intro
+2. <a href="../Tutorials_Hands_On/">Tutorials_Hands_On.md</a> - Step-by-step walkthroughs
+3. <a href="../Session1_Building_The_Foundation/">Session 1: Building the Foundation</a> - Deep dives
+4. <a href="../All_Links/">All_Links.md</a> - Curated reference links</p>
+<hr />
+<h3 id="q-how-do-i-know-if-im-using-copilot-well">Q: How do I know if I'm using Copilot well?<a class="headerlink" href="#q-how-do-i-know-if-im-using-copilot-well" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Good signs:
+- ✅ You're getting relevant suggestions in 2-3 tries max
+- ✅ You understand why Copilot made each suggestion
+- ✅ You're using different modes (Ask, Plan, Agent) for different jobs
+- ✅ You're iterating: "That's close, but change X to Y"
+- ✅ You rarely ask the same question twice</p>
+<p>If you're struggling, see <a href="#my-suggestion-looks-wrong-what-do-i-do">"My suggestion looks wrong"</a> above.</p>
+<hr />
+<h2 id="still-stuck">📞 Still Stuck?<a class="headerlink" href="#still-stuck" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Ask in the chat itself:</strong> Type your problem; Copilot can often debug itself</li>
+<li><strong>Check the debug view:</strong> Command Palette → "Toggle Chat Debug View"</li>
+<li><strong>Read <a href="../Session1_Building_The_Foundation/">Session 1</a></strong> for deeper understanding</li>
+<li><strong>Explore <a href="../All_Links/">All_Links.md</a></strong> for official documentation</li>
+</ul>
+<hr />
+<p><strong>Remember:</strong> Copilot is a tool. Like any tool, the first month involves learning. After that, you'll wonder how you coded without it. 🚀</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/SaravananRajaraman/Prompt2Production" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.highlight", "search.share", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

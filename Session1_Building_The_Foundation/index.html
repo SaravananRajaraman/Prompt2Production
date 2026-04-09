@@ -1,0 +1,2940 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn and skill up with GitHub Copilot — from Ask to multi-agent orchestration">
+      
+      
+      
+        <link rel="canonical" href="https://SaravananRajaraman.github.io/Prompt2Production/Session1_Building_The_Foundation/">
+      
+      
+        <link rel="prev" href="../Learning_Paths/">
+      
+      
+        <link rel="next" href="../Session2_Advanced_Agent_Capabilities/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Session 1 - Building the Foundation - Prompt2Production</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#session-1-building-the-foundation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Prompt2Production" class="md-header__button md-logo" aria-label="Prompt2Production" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Prompt2Production
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Session 1 - Building the Foundation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SaravananRajaraman/Prompt2Production" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Prompt2Production
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting_Started_Primer/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Learning_Paths/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Learning Paths
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Session 1 — Foundation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Session2_Advanced_Agent_Capabilities/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Session 2 — Advanced
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Tutorials_Hands_On/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorials
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../FAQ_For_Beginners/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../All_Links/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  All Links
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Prompt2Production" class="md-nav__button md-logo" aria-label="Prompt2Production" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Prompt2Production
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SaravananRajaraman/Prompt2Production" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Prompt2Production
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting_Started_Primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Learning_Paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 1 — Foundation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 1 — Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Will Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-three-interaction-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Three Interaction Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Three Interaction Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ask-mode-instant-answers-in-your-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ask Mode - Instant Answers in Your Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-mode-design-first-code-second" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan Mode - Design First, Code Second
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-mode-autonomous-multi-step-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Mode - Autonomous Multi-Step Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-daily-development-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Daily Development Cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-chat-context-and-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Chat Context and Prompting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Chat Context and Prompting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlling-what-copilot-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling What Copilot Sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-framework-for-effective-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The POWER Framework for Effective Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-chat-debug-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Chat Debug View
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-from-prompt-engineering-to-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: From Prompt Engineering to Context Engineering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: From Prompt Engineering to Context Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Shift
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-models-are-sensitive-to-context-the-counterintuitive-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Models Are Sensitive to Context: The Counterintuitive Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-the-system-prompt-you-never-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: The System Prompt You Never Write
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: The System Prompt You Never Write">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-you-send-a-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happens When You Send a Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-system-prompt-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The System Prompt Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-user-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The User Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Custom Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Custom Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-they-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What They Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-goes-in-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Goes in Them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-not-to-put-in-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Not to Put in Them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-awesome-copilot-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Awesome Copilot Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-prompt-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Prompt Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Prompt Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-they-are_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What They Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-prompt-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of a Prompt File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-live_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-land-in-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Land in the Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-best-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Best Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-custom-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Custom Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Custom Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-they-are_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What They Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-custom-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of a Custom Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-live-and-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Live and Land
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-tool-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricting Tool Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-primitives-are-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Primitives Are Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-real-workflow-example-plan-generate-implement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Real Workflow Example: Plan → Generate → Implement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-the-context-window-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: The Context Window Budget
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 8: The Context Window Budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thinking-in-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking in Tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-budget-allocation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Budget Allocation Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-9-context-rot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 9: Context Rot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 9: Context Rot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-phenomenon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Phenomenon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-context-rot-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Context Rot Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategies-for-managing-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategies for Managing Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-10-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 10: Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 10: Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-window-assembly-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Window Assembly Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-file-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key File Locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-four-context-primitives-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Four Context Primitives at a Glance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-decision-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Decision Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signs-that-context-needs-a-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signs That Context Needs a Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-reset-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Reset Approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session2_Advanced_Agent_Capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session 2 — Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials_Hands_On/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ_For_Beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../All_Links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Will Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-three-interaction-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Three Interaction Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Three Interaction Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ask-mode-instant-answers-in-your-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ask Mode - Instant Answers in Your Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-mode-design-first-code-second" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan Mode - Design First, Code Second
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-mode-autonomous-multi-step-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Mode - Autonomous Multi-Step Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-daily-development-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Daily Development Cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-chat-context-and-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Chat Context and Prompting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Chat Context and Prompting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlling-what-copilot-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling What Copilot Sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-framework-for-effective-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The POWER Framework for Effective Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-chat-debug-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Chat Debug View
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-from-prompt-engineering-to-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: From Prompt Engineering to Context Engineering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: From Prompt Engineering to Context Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Shift
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-models-are-sensitive-to-context-the-counterintuitive-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Models Are Sensitive to Context: The Counterintuitive Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-the-system-prompt-you-never-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: The System Prompt You Never Write
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: The System Prompt You Never Write">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-you-send-a-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happens When You Send a Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-system-prompt-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The System Prompt Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-user-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The User Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Custom Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Custom Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-they-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What They Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-goes-in-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Goes in Them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-not-to-put-in-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Not to Put in Them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-awesome-copilot-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Awesome Copilot Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-prompt-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Prompt Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Prompt Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-they-are_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What They Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-prompt-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of a Prompt File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-live_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-land-in-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Land in the Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-best-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Best Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-custom-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Custom Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Custom Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-they-are_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What They Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-custom-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of a Custom Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-live-and-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where They Live and Land
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-tool-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricting Tool Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-primitives-are-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Primitives Are Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-real-workflow-example-plan-generate-implement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Real Workflow Example: Plan → Generate → Implement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-the-context-window-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: The Context Window Budget
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 8: The Context Window Budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thinking-in-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking in Tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-budget-allocation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Budget Allocation Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-9-context-rot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 9: Context Rot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 9: Context Rot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-phenomenon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Phenomenon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-context-rot-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Context Rot Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategies-for-managing-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategies for Managing Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-10-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 10: Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 10: Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-window-assembly-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Window Assembly Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-file-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key File Locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-four-context-primitives-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Four Context Primitives at a Glance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-decision-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Decision Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signs-that-context-needs-a-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signs That Context Needs a Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-reset-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Reset Approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="session-1-building-the-foundation">Session 1: Building the Foundation<a class="headerlink" href="#session-1-building-the-foundation" title="Permanent link">&para;</a></h1>
+<p><code>[FOUNDATIONAL]</code> - Start here if you're learning Copilot. Master the basics before moving to Session 2.</p>
+<blockquote>
+<p><strong>"Low Code or No Code" · "Prompt to Production"</strong></p>
+<p>This session covers the complete foundation layer of GitHub Copilot - the three interaction modes, how the context window is assembled, and the three primitives you use to engineer it. Master these and everything else in your AI development workflow becomes easier, faster, and more predictable.</p>
+</blockquote>
+<p>ℹ️ <strong>New to Copilot?</strong> Start with <a href="../Getting_Started_Primer/">Getting_Started_Primer.md</a> instead. Come back here once you've tried the three modes.</p>
+<hr />
+<h2 id="what-you-will-learn">What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The <strong>three interaction modes</strong> - Ask, Plan, and Agent - and when to use each</li>
+<li>How to control what Copilot sees using chat context, the POWER framework, and the debug view</li>
+<li>The <strong>context engineering</strong> discipline: designing what the model sees, not just what you say</li>
+<li>How the four-layer context window is assembled before your message reaches the model</li>
+<li><strong>Custom Instructions</strong> - persistent background knowledge injected on every request</li>
+<li><strong>Prompt Files</strong> - reusable workflow templates invoked with a slash command</li>
+<li><strong>Custom Agents</strong> - persona + tools + workflow definitions for consistent behaviour</li>
+<li>The context window budget, <strong>context rot</strong>, and practical strategies to design around both</li>
+</ul>
+<hr />
+<h2 id="part-1-the-three-interaction-modes">Part 1: The Three Interaction Modes<a class="headerlink" href="#part-1-the-three-interaction-modes" title="Permanent link">&para;</a></h2>
+<p>Before diving into the mechanics of how Copilot assembles its context, you need to know the three fundamental ways to interact with it. Every tool has a mode for every job - these are GitHub Copilot's.</p>
+<h3 id="ask-mode-instant-answers-in-your-editor">Ask Mode - Instant Answers in Your Editor<a class="headerlink" href="#ask-mode-instant-answers-in-your-editor" title="Permanent link">&para;</a></h3>
+<p>Ask mode is a conversational interface. You type a question or highlight a block of code, and Copilot responds with an explanation, suggestion, or code snippet inline. It reads your current file, imports, and open tabs as implicit context.</p>
+<p><strong>How to use it:</strong>
+1. <strong>Open chat:</strong> Press <code>Ctrl+I</code> (Windows/Linux) or <code>Cmd+I</code> (Mac)
+   - Alternative: Click the Copilot icon in the VS Code activity bar (left sidebar)
+   - For inline chat: Press <code>Ctrl+Alt+I</code> (Windows/Linux) or <code>Cmd+Alt+I</code> (Mac)
+2. Type a natural-language question
+3. Copilot reads the active file and any referenced context
+4. Receive an explanation, fix, or generated snippet
+5. Follow up with refinements in the same thread</p>
+<p><strong>Best use cases:</strong>
+- Explain unfamiliar code or error messages
+- Understand library APIs without leaving the editor
+- Write unit test descriptions or generate regex patterns
+- Quick one-shot code generation for small tasks</p>
+<p>💡 <strong>Pro Tip:</strong> Add <code>@workspace</code> to your question to search your entire project, not just the current file. Example: <code>@workspace where do we handle authentication?</code></p>
+<hr />
+<h3 id="plan-mode-design-first-code-second">Plan Mode - Design First, Code Second<a class="headerlink" href="#plan-mode-design-first-code-second" title="Permanent link">&para;</a></h3>
+<p>Plan mode separates thinking from doing. You describe what you want to build, and Copilot produces a step-by-step implementation plan you can review before a single line of code is written. This mode prevents scope creep and keeps the implementation grounded in an agreed approach.</p>
+<p><strong>The four-step flow:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Describe</strong></td>
+<td>Write your feature or problem in plain English</td>
+</tr>
+<tr>
+<td><strong>2. Review Plan</strong></td>
+<td>Copilot generates a step-by-step implementation plan</td>
+</tr>
+<tr>
+<td><strong>3. Refine</strong></td>
+<td>Adjust, re-order steps, or ask Copilot to reconsider alternatives</td>
+</tr>
+<tr>
+<td><strong>4. Execute</strong></td>
+<td>Approve and let Copilot scaffold the code</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Rule:</strong> Always agree on the implementation plan before Copilot writes a single line of code. This single habit eliminates the most common AI coding frustration - the model solving the wrong problem well.</p>
+</blockquote>
+<hr />
+<h3 id="agent-mode-autonomous-multi-step-execution">Agent Mode - Autonomous Multi-Step Execution<a class="headerlink" href="#agent-mode-autonomous-multi-step-execution" title="Permanent link">&para;</a></h3>
+<p>Agent mode is the most powerful. You hand Copilot a high-level goal; it autonomously edits files, runs terminal commands, reads test output, fixes failures, and loops until the task is done. You stay in the editor reviewing each decision.</p>
+<p><strong>What Agent mode can do autonomously:</strong>
+- Create new files, folders, and boilerplate scaffolding
+- Refactor and modernise code across the full codebase
+- Write complete test suites, run them, and fix failures until they pass
+- Execute build and install commands without you switching contexts</p>
+<p><strong>The three-level comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Ask Mode</th>
+<th>Plan Mode</th>
+<th>Agent Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interaction</td>
+<td>Conversational Q&amp;A</td>
+<td>Structured planning</td>
+<td>Autonomous execution</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Quick questions &amp; explanations</td>
+<td>Feature design &amp; architecture</td>
+<td>Multi-file tasks &amp; refactors</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Text answers &amp; snippets</td>
+<td>Ordered task list</td>
+<td>Working code changes</td>
+</tr>
+<tr>
+<td>Control level</td>
+<td>High - you decide all edits</td>
+<td>Medium - you approve plan</td>
+<td>Lower - Copilot drives</td>
+</tr>
+<tr>
+<td>Ideal when</td>
+<td>Stuck on a concept or bug</td>
+<td>Starting a new feature</td>
+<td>Implementing known design</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="the-daily-development-cycle">The Daily Development Cycle<a class="headerlink" href="#the-daily-development-cycle" title="Permanent link">&para;</a></h3>
+<p>The three modes are designed to work together. A typical feature will flow through all three:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Explore (Ask) → Design (Plan) → Build (Agent) → Review (Ask)
+</code></pre></div>
+<ol>
+<li><strong>Ask</strong>: Explain unfamiliar APIs, understand error messages, brainstorm approaches</li>
+<li><strong>Plan</strong>: Walk through the implementation steps before any code is written</li>
+<li><strong>Agent</strong>: Scaffold files, write functions, run tests, fix failures</li>
+<li><strong>Ask</strong> again: Review diffs, explain what changed, write documentation or commit messages</li>
+</ol>
+<p>This cycle is repeatable. Start any feature with Ask, design with Plan, build with Agent, then loop back to Ask to review and document.</p>
+<hr />
+<h2 id="part-2-chat-context-and-prompting">Part 2: Chat Context and Prompting<a class="headerlink" href="#part-2-chat-context-and-prompting" title="Permanent link">&para;</a></h2>
+<h3 id="controlling-what-copilot-sees">Controlling What Copilot Sees<a class="headerlink" href="#controlling-what-copilot-sees" title="Permanent link">&para;</a></h3>
+<p>When you send a message, VS Code automatically includes implicit context (the active file, selected text, current editor state). But you can be deliberate about what else you add.</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code> (slash)</td>
+<td>Invoke a prompt file or built-in command (e.g., <code>/fix</code>, <code>/explain</code>, <code>/tests</code>)</td>
+</tr>
+<tr>
+<td><code>#</code> (hashtag)</td>
+<td>Reference a specific file, symbol, or variable (e.g., <code>#file:server.ts</code>, <code>#selection</code>)</td>
+</tr>
+<tr>
+<td><code>@</code> (at)</td>
+<td>Reference a chat participant for domain-specific context (e.g., <code>@workspace</code>, <code>@vscode</code>)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Context window awareness:</strong> Every piece of context you attach consumes tokens from the model's context budget. Add what is relevant; skip what is not. More context is not always better - irrelevant content dilutes the model's attention.</p>
+</blockquote>
+<hr />
+<h3 id="the-power-framework-for-effective-prompts">The POWER Framework for Effective Prompts<a class="headerlink" href="#the-power-framework-for-effective-prompts" title="Permanent link">&para;</a></h3>
+<p>The difference between average results and excellent results is almost never the model - it's the prompt. The same AI gives average answers to vague questions and excellent answers to structured ones.</p>
+<p><strong>The five elements of a great prompt:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Question to Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P - Purpose</strong></td>
+<td>What exactly do you want? Be specific.</td>
+</tr>
+<tr>
+<td><strong>O - Operating Context</strong></td>
+<td>What tech stack, architecture, and environment?</td>
+</tr>
+<tr>
+<td><strong>W - What Constraints</strong></td>
+<td>What rules, limits, or standards must be followed?</td>
+</tr>
+<tr>
+<td><strong>E - Expected Format</strong></td>
+<td>How should the output be structured (list, table, code, explanation)?</td>
+</tr>
+<tr>
+<td><strong>R - Role &amp; Tone</strong></td>
+<td>At what expertise level should the AI think (junior, senior, architect)?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example - Bad prompt vs. power prompt:</strong></p>
+<blockquote>
+<p>❌ <code>Write about micro-frontends</code></p>
+<p>✅ <code>You are a senior frontend architect. Explain micro-frontends for a React enterprise application with 50+ repos. Compare module federation vs iframe approach. Give pros/cons and a final recommendation.</code></p>
+</blockquote>
+<p>The second prompt applies all five elements: the role is defined (senior architect), the context is specific (React enterprise, 50+ repos), the format is clear (comparison + recommendation), and the purpose is precise.</p>
+<hr />
+<h3 id="the-chat-debug-view">The Chat Debug View<a class="headerlink" href="#the-chat-debug-view" title="Permanent link">&para;</a></h3>
+<p>The debug view is one of the most underused tools in the VS Code Copilot toolbox. Open it via the Command Palette → <strong>"Toggle Chat Debug View"</strong>.</p>
+<p>It shows the exact prompt that was assembled and sent to the model, broken into layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What to Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System prompt</strong></td>
+<td>Which custom instructions and agent instructions were loaded</td>
+</tr>
+<tr>
+<td><strong>User prompt</strong></td>
+<td>The prompt you sent, exactly as the model received it</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Which files, symbols, and attachments were included</td>
+</tr>
+<tr>
+<td><strong>Response</strong></td>
+<td>The model's full response and any reasoning steps</td>
+</tr>
+<tr>
+<td><strong>Tool responses</strong></td>
+<td>Inputs and outputs of every tool called (edit, terminal, search)</td>
+</tr>
+</tbody>
+</table>
+<p>Use the debug view to diagnose unexpected behaviour: if Copilot ignored a file you expected to be in context, or failed to follow an instruction, the debug view will show you exactly what the model saw.</p>
+<hr />
+<h2 id="part-3-from-prompt-engineering-to-context-engineering">Part 3: From Prompt Engineering to Context Engineering<a class="headerlink" href="#part-3-from-prompt-engineering-to-context-engineering" title="Permanent link">&para;</a></h2>
+<h3 id="the-shift">The Shift<a class="headerlink" href="#the-shift" title="Permanent link">&para;</a></h3>
+<p>💡 <strong>Key Insight:</strong> There's a phrase circulating since late 2024: <em>"prompt engineering is dead; context engineering is what matters now."</em> It's an overstatement, but it points at something real.</p>
+<p><strong>Prompt engineering</strong> = Writing good messages<br />
+<strong>Context engineering</strong> = Designing <em>everything the model sees</em> before it even reads your message  </p>
+<p>It's the difference between <strong>choosing the right words</strong> vs. <strong>architecting the right environment</strong>.</p>
+<h3 id="the-definition">The Definition<a class="headerlink" href="#the-definition" title="Permanent link">&para;</a></h3>
+<p>Context engineering is the practice of <strong>deliberately designing what goes into the context window</strong>:</p>
+<p>✅ What information the model needs at this step<br />
+❌ What information it does <em>not</em> need (irrelevant data hurts quality)<br />
+🎯 How information is structured and placed<br />
+⏰ When to refresh the context and start fresh  </p>
+<p><strong>Think of it like designing an information system, not writing an email.</strong> You're deciding where data lives, when it loads, and when it expires.</p>
+<h3 id="why-models-are-sensitive-to-context-the-counterintuitive-core">Why Models Are Sensitive to Context: The Counterintuitive Core<a class="headerlink" href="#why-models-are-sensitive-to-context-the-counterintuitive-core" title="Permanent link">&para;</a></h3>
+<p>⚠️ <strong>Critical:</strong> Adding the <em>wrong</em> information to the context is not neutral. <strong>It actively hurts results.</strong></p>
+<p>Here's why: Language models read the <em>entire</em> context window and produce responses shaped by the overall distribution of content. Every token is like a vote for a certain kind of answer.</p>
+<p><strong>Real examples:</strong>
+- ❌ Include a marketing document when asking about backend code → Model suggests marketing-friendly but technically wrong solutions
+- ❌ 50-message chat history from 3 hours ago → Old context dilutes focus on today's problem
+- ✅ Include only relevant files and recent messages → Model votes unanimously for good code</p>
+<p><strong>Context engineering = Making sure all the votes point in the same direction.</strong></p>
+<hr />
+<h2 id="part-4-the-system-prompt-you-never-write">Part 4: The System Prompt You Never Write<a class="headerlink" href="#part-4-the-system-prompt-you-never-write" title="Permanent link">&para;</a></h2>
+<h3 id="what-happens-when-you-send-a-message">What Happens When You Send a Message<a class="headerlink" href="#what-happens-when-you-send-a-message" title="Permanent link">&para;</a></h3>
+<p>Before your words reach the language model, Copilot assembles a complete prompt. Every layer of that assembly affects the output.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│                      SYSTEM PROMPT                          │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│  1. Core identity &amp; global rules (2-3 lines)                │
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│  2. General instructions (model-specific quirks)            │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│  3. Tool use instructions (edit, terminal, todos…)          │
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│  4. Output format instructions (file pills, parsing)        │
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│  5. YOUR custom instructions  ← you control this            │
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│  6. YOUR custom agent instructions ← you control this       │
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│                    USER MESSAGE #1                           │
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│  Environment info (OS, VS Code version)                     │
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│  Workspace info (project structure, file tree)              │
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│                    USER MESSAGE #2                           │
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│  Context info (current date/time, open terminals)           │
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│  YOUR prompt file contents (if used) ← you control this    │
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│  Editor context (any files you attached)                    │
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│  YOUR actual message                                        │
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p>The model sees all of this as a single continuous document. It has no sense of "the system prompt" or "the user message" - those are protocol-level labels. What the model processes is the full concatenation.</p>
+<h3 id="the-system-prompt-layers">The System Prompt Layers<a class="headerlink" href="#the-system-prompt-layers" title="Permanent link">&para;</a></h3>
+<p><strong>Layers 1–4 - Copilot's built-in content.</strong> Core identity, model-specific quirks, tool call syntax, and output formatting. You don't write these, and you don't see them in normal use. The chat debug view is the only way to inspect them.</p>
+<p><strong>Layers 5 &amp; 6 - Your additions.</strong> Custom instructions and custom agent instructions land at the very end of the system prompt - always. No matter how many instruction files you have, <code>copilot-instructions.md</code> is the last one in. No matter which custom agent you're using, its instructions follow yours.</p>
+<h3 id="the-user-messages">The User Messages<a class="headerlink" href="#the-user-messages" title="Permanent link">&para;</a></h3>
+<p>Two user messages are appended before your actual words appear. The first contains <strong>environment info</strong> (OS, VS Code version) and <strong>workspace info</strong> (your project file tree - this is why Copilot can refer to your file structure without you mentioning it). The second contains <strong>context info</strong> (date, open terminals), any <strong>prompt file contents</strong> if you invoked one, and your <strong>attached files</strong>. Your actual message comes last.</p>
+<hr />
+<h2 id="part-5-custom-instructions">Part 5: Custom Instructions<a class="headerlink" href="#part-5-custom-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="what-they-are">What They Are<a class="headerlink" href="#what-they-are" title="Permanent link">&para;</a></h3>
+<p>Custom instructions are persistent context you inject into the system prompt automatically - no slash commands, no manual invocation. Every single request you send includes them.</p>
+<p>The canonical use case is project-level knowledge: your architecture patterns, your preferred libraries, your team's naming conventions, your framework version. Anything that should quietly inform every response.</p>
+<p>VS Code can <strong>generate</strong> instructions for you. Click the gear icon in Copilot chat and choose "Generate Chat Instructions". It will analyse your project and produce a starting file.</p>
+<h3 id="where-they-live">Where They Live<a class="headerlink" href="#where-they-live" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.github/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  instructions/
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    copilot-instructions.md   ← global project instructions
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    nextjs.instructions.md    ← additional instructions
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    typescript.instructions.md
+</code></pre></div>
+<p>You can have as many instruction files as you like. They all land in the system prompt, with <code>copilot-instructions.md</code> always last. Instructions can also be placed in the user data folder (outside the project), making them globally available across all workspaces.</p>
+<h3 id="what-goes-in-them">What Goes in Them<a class="headerlink" href="#what-goes-in-them" title="Permanent link">&para;</a></h3>
+<p>Good custom instructions are <strong>informational, not instructional</strong>. They tell the agent what is true about the project, not how to behave.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Project: E-commerce Platform</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="gu">## Architecture</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">-</span><span class="w"> </span>Backend: Node.js with Express, TypeScript strict mode
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">-</span><span class="w"> </span>Frontend: Next.js 14 with App Router
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">-</span><span class="w"> </span>Database: PostgreSQL via Prisma ORM
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">-</span><span class="w"> </span>Auth: NextAuth v5
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="gu">## Patterns</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>All API routes return { data, error } shaped responses
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">-</span><span class="w"> </span>Services live in /src/services/, controllers in /src/controllers/
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">-</span><span class="w"> </span>Tests use Vitest; run with <span class="sb">`npm test`</span>
+</code></pre></div>
+<h3 id="what-not-to-put-in-them">What Not to Put in Them<a class="headerlink" href="#what-not-to-put-in-them" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Behavioural overrides ("always write tests") - that's the job of custom agents</li>
+<li>Workflow steps ("first plan, then implement") - that's the job of prompt files</li>
+<li>Large document content - pays token cost on every request, most of which are irrelevant</li>
+</ul>
+<p>Write for structure, not prose. The model weights structured content more effectively than dense paragraphs.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gh"># DON&#39;T (requires reading to extract structure):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>We&#39;re a Next.js team working with TypeScript and we prefer to use Prisma for
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>our database interactions. Our tests are written in Vitest...
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="gh"># DO (structure is immediately visible):</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="gu">## Stack</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">-</span><span class="w"> </span>Next.js 14 (App Router), TypeScript strict
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">-</span><span class="w"> </span>Prisma ORM (PostgreSQL)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">-</span><span class="w"> </span>Vitest for unit tests
+</code></pre></div>
+<h3 id="the-awesome-copilot-repository">The Awesome Copilot Repository<a class="headerlink" href="#the-awesome-copilot-repository" title="Permanent link">&para;</a></h3>
+<p><code>github.com/github/awesome-copilot</code> is a curated collection of instruction files, prompt files, and custom agents contributed by developers worldwide. If you work with a popular stack, check here before writing your own - there are likely high-quality instructions you can install directly.</p>
+<hr />
+<h2 id="part-6-prompt-files">Part 6: Prompt Files<a class="headerlink" href="#part-6-prompt-files" title="Permanent link">&para;</a></h2>
+<h3 id="what-they-are_1">What They Are<a class="headerlink" href="#what-they-are_1" title="Permanent link">&para;</a></h3>
+<p>A prompt file is a reusable prompt template stored as a <code>.prompt.md</code> file. Where custom instructions are always active and invisible, prompt files are <strong>explicitly invoked</strong> - you call them with a <code>/</code> slash command in chat.</p>
+<p>The most useful mental model: a prompt file is a <strong>saved workflow step</strong>. Instead of typing the same complex prompt over and over, you define it once, give it a name, and invoke it with a slash.</p>
+<h3 id="anatomy-of-a-prompt-file">Anatomy of a Prompt File<a class="headerlink" href="#anatomy-of-a-prompt-file" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>---
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>description: Generate a new React component with tests
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>mode: agent
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="gu">model: claude-sonnet-4-5</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="gu">---</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>You are creating a new React component. Follow these steps precisely:
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">1.</span> Analyse the existing components in /src/components/ for style patterns
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">2.</span> Create the component file at /src/components/{{name}}/{{name}}.tsx
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">3.</span> Create a test file at /src/components/{{name}}/{{name}}.test.tsx
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">4.</span> Export from /src/components/index.ts
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>The component should follow the project&#39;s existing patterns exactly.
+</code></pre></div>
+<p>The YAML front matter is where the power lives:
+- <code>description</code>: shown in the <code>/</code> command picker so you remember what each prompt does
+- <code>mode</code>: <code>agent</code> (full tool access), <code>ask</code> (conversational), or <code>edit</code> (direct file editing)
+- <code>model</code>: the model to use when this prompt runs - <strong>overrides whatever model is currently selected</strong></p>
+<p>That last point - automatic model switching - is significant. You can write a planning prompt file that forces a switch to Claude Opus 4.5, and an implementation prompt file that switches to a smaller, cheaper model. The user types a slash command and Copilot handles the model routing automatically.</p>
+<h3 id="where-they-live_1">Where They Live<a class="headerlink" href="#where-they-live_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.github/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  prompts/
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    generate-component.prompt.md
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    plan.prompt.md
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    generate-implementation-plan.prompt.md
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    remember.prompt.md
+</code></pre></div>
+<h3 id="where-they-land-in-the-prompt">Where They Land in the Prompt<a class="headerlink" href="#where-they-land-in-the-prompt" title="Permanent link">&para;</a></h3>
+<p>Prompt files go into the <strong>user message</strong> - above the context info section, before your actual message. This matters because every message you send with a prompt file re-inserts that file's contents. Over a long conversation, this accumulates. Keep prompt files focused to manage this cost.</p>
+<h3 id="the-best-use-cases">The Best Use Cases<a class="headerlink" href="#the-best-use-cases" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Planning steps</strong>: Research the codebase and produce a branch-level implementation plan</li>
+<li><strong>Code generation</strong>: Generate a component, endpoint, or migration following your project's precise conventions</li>
+<li><strong>Memory capture</strong>: Takes what you tell it and writes it to a persistent instructions file</li>
+<li><strong>Review templates</strong>: Code review prompt that checks security, performance, and conventions consistently</li>
+</ul>
+<hr />
+<h2 id="part-7-custom-agents">Part 7: Custom Agents<a class="headerlink" href="#part-7-custom-agents" title="Permanent link">&para;</a></h2>
+<h3 id="what-they-are_2">What They Are<a class="headerlink" href="#what-they-are_2" title="Permanent link">&para;</a></h3>
+<p>Custom agents define a <strong>persona and workflow</strong> for the agent. Where custom instructions add background knowledge and prompt files define reusable tasks, a custom agent changes who the agent <em>is</em> - what tools it has, how it approaches problems, what workflow it follows.</p>
+<p>Copilot ships with built-in agents: the default Agent mode, Plan mode, and Edit mode. You can create your own to match your specific workflows.</p>
+<h3 id="anatomy-of-a-custom-agent">Anatomy of a Custom Agent<a class="headerlink" href="#anatomy-of-a-custom-agent" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nn">---</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">implement</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implements code from an implementation plan document step by step</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">tools</span><span class="p">:</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edit</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terminal</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4.1-mini</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nn">---</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="l l-Scalar l-Scalar-Plain">You are an implementation agent. You receive an implementation plan document</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="l l-Scalar l-Scalar-Plain">and execute it precisely, step by step.</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="l l-Scalar l-Scalar-Plain">Rules</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never deviate from the plan</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implement exactly one step, then stop and report completion</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests after each step</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If a step fails, diagnose and fix before moving to the next</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mark each step complete with [x] in the document</span>
+</code></pre></div>
+<p>Key elements:
+- <code>tools</code>: the tools this agent can use - you can restrict access intentionally
+- <code>model</code>: the model this agent uses by default
+- The body: the agent's identity, workflow, and constraints</p>
+<h3 id="where-they-live-and-land">Where They Live and Land<a class="headerlink" href="#where-they-live-and-land" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>.github/
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  agents/
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    planner.agent.md
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    implement.agent.md
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    review.agent.md
+</code></pre></div>
+<p>Custom agent instructions land in the system prompt <strong>after your custom instructions</strong> - always last. This position gives your agent instructions high contextual weight relative to everything that precedes them.</p>
+<h3 id="handoffs">Handoffs<a class="headerlink" href="#handoffs" title="Permanent link">&para;</a></h3>
+<p>Custom agents support <strong>handoffs</strong> - a mechanism to pass control from one agent to another with clickable buttons after a response.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nn">---</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planner</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">handoffs</span><span class="p">:</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">implement</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Implement</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">plan&quot;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">review</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Review</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">plan&quot;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nn">---</span>
+</code></pre></div>
+<h3 id="restricting-tool-access">Restricting Tool Access<a class="headerlink" href="#restricting-tool-access" title="Permanent link">&para;</a></h3>
+<p>One of the most valuable things a custom agent can do is <strong>restrict</strong> what tools it has. A planning agent that cannot run terminal commands cannot accidentally execute anything during the planning phase.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">tools</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="c1"># No edit, no terminal - research only</span>
+</code></pre></div>
+<p>This is not just safety - it also improves focus. An agent that knows it can only read files will approach its task differently from one with full tool access.</p>
+<h3 id="the-three-primitives-are-building-blocks">The Three Primitives Are Building Blocks<a class="headerlink" href="#the-three-primitives-are-building-blocks" title="Permanent link">&para;</a></h3>
+<p>Custom instructions, prompt files, and custom agents are not alternatives to each other - they are <strong>layers of a stack</strong>. The most effective Copilot workflows use all three, each in its appropriate role.</p>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>Role</th>
+<th>When Active</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom Instructions</td>
+<td>Background knowledge</td>
+<td>Always - every request</td>
+</tr>
+<tr>
+<td>Prompt Files</td>
+<td>Workflow steps</td>
+<td>When explicitly invoked</td>
+</tr>
+<tr>
+<td>Custom Agents</td>
+<td>Identity and tools</td>
+<td>When the agent is selected</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a-real-workflow-example-plan-generate-implement">A Real Workflow Example: Plan → Generate → Implement<a class="headerlink" href="#a-real-workflow-example-plan-generate-implement" title="Permanent link">&para;</a></h3>
+<p><strong>Stage 1 - Plan</strong> (new chat session)
+- Invoke the <code>/plan</code> prompt file - automatically switches to Claude Opus 4.5
+- The agent researches the codebase and produces a <code>plan.md</code> with commit-level steps
+- Result: a structured, commit-by-commit implementation plan</p>
+<p><strong>Stage 2 - Generate</strong> (new chat session - prevents context rot)
+- Invoke <code>/generate</code>, attach <code>plan.md</code>
+- The large model writes all implementation code into <code>implementation-plan.md</code> - not into the project files
+- Code lives in markdown, each step with a checkbox
+- Result: a complete implementation document written by the best available model</p>
+<p><strong>Stage 3 - Implement</strong> (new chat session)
+- Switch to the <code>implement</code> custom agent, attach <code>implementation-plan.md</code>
+- This agent uses a small, fast, free model
+- It implements one step at a time, marks the checkbox, tests, and stops
+- Result: production-ready code delivered by a free model executing high-quality instructions</p>
+<p>This workflow extracts maximum quality from expensive models while executing with minimum cost.</p>
+<hr />
+<h2 id="part-8-the-context-window-budget">Part 8: The Context Window Budget<a class="headerlink" href="#part-8-the-context-window-budget" title="Permanent link">&para;</a></h2>
+<h3 id="thinking-in-tokens">Thinking in Tokens<a class="headerlink" href="#thinking-in-tokens" title="Permanent link">&para;</a></h3>
+<p>A token is roughly three-quarters of a word. The context window is a finite budget shared by everything the model sees.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Typical Token Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom instructions (lean)</td>
+<td>200–500 tokens</td>
+</tr>
+<tr>
+<td>Custom instructions (verbose)</td>
+<td>1,000–5,000 tokens</td>
+</tr>
+<tr>
+<td>Workspace info (small project)</td>
+<td>500–1,500 tokens</td>
+</tr>
+<tr>
+<td>Workspace info (large project)</td>
+<td>2,000–10,000 tokens</td>
+</tr>
+<tr>
+<td>Prompt file</td>
+<td>500–3,000 tokens</td>
+</tr>
+<tr>
+<td>A medium-sized attached file</td>
+<td>2,000–10,000 tokens</td>
+</tr>
+<tr>
+<td>A full conversation history (30 turns)</td>
+<td>20,000–80,000 tokens</td>
+</tr>
+</tbody>
+</table>
+<p>Notice what consumes the most budget: <strong>conversation history</strong>. Every exchange accumulates. A long, productive conversation is also a context-hungry one.</p>
+<h3 id="the-budget-allocation-strategy">The Budget Allocation Strategy<a class="headerlink" href="#the-budget-allocation-strategy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Allocation</th>
+<th>What It Covers</th>
+<th>Target %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static</td>
+<td>Instructions, agent configs, workspace info</td>
+<td>~20%</td>
+</tr>
+<tr>
+<td>Task context</td>
+<td>Files and data relevant to the current task</td>
+<td>~40%</td>
+</tr>
+<tr>
+<td>Conversation history</td>
+<td>Accumulated exchanges</td>
+<td>~40%</td>
+</tr>
+</tbody>
+</table>
+<p>When conversation history starts crowding out task context - when you're attaching files and they're getting lost because the conversation is 50,000 tokens - that's the signal to start a fresh chat.</p>
+<hr />
+<h2 id="part-9-context-rot">Part 9: Context Rot<a class="headerlink" href="#part-9-context-rot" title="Permanent link">&para;</a></h2>
+<h3 id="the-core-phenomenon">The Core Phenomenon<a class="headerlink" href="#the-core-phenomenon" title="Permanent link">&para;</a></h3>
+<p>Context rot is not a VS Code bug. It is a fundamental property of transformer language models at scale. As the context window grows, <strong>the model's effective attention becomes diluted</strong> - older instructions compete for attention with the latest exchange, and older instructions tend to lose.</p>
+<p>The degradation is predictable:</p>
+<table>
+<thead>
+<tr>
+<th>Context Size</th>
+<th>Typical Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2K–8K tokens</td>
+<td>Accurate, focused, instruction-following</td>
+</tr>
+<tr>
+<td>16K–32K tokens</td>
+<td>Drift begins - occasional lapses, less precision</td>
+</tr>
+<tr>
+<td>32K–64K tokens</td>
+<td>Significant degradation - instructions ignored</td>
+</tr>
+<tr>
+<td>64K+ tokens</td>
+<td>Severe - model responds to most recent context only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-context-rot-looks-like">What Context Rot Looks Like<a class="headerlink" href="#what-context-rot-looks-like" title="Permanent link">&para;</a></h3>
+<p>You have experienced context rot if:
+- Copilot starts writing code in a style you explicitly told it to avoid
+- It re-introduces a library you already removed and said not to use
+- It ignores a constraint you established at the beginning of the conversation
+- Responses become longer and less targeted over time
+- It proposes approaches that contradict decisions you've already made</p>
+<p>These are not random failures. They are the signature of a diluted context.</p>
+<h3 id="strategies-for-managing-context">Strategies for Managing Context<a class="headerlink" href="#strategies-for-managing-context" title="Permanent link">&para;</a></h3>
+<p><strong>Design for phase boundaries.</strong> Every complex task has natural phases. Each phase boundary is a candidate for a new chat session. The overhead of a few words of context hand-off is almost always worth the quality gain.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Phase 1: Research and plan         → New chat after phase completes
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Phase 2: Write implementation doc  → New chat after phase completes
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Phase 3: Execute implementation    → New chat per step or per commit
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Phase 4: Review and test           → New chat
+</code></pre></div>
+<p><strong>Use subagents for heavy lifting.</strong> When a task requires deep exploration (reading dozens of files, generating large amounts of code), a subagent absorbs that token cost in an isolated context window. Only its final summary returns to your main conversation. (Covered fully in Session 2.)</p>
+<p><strong>Keep custom instructions lean.</strong> Instructions are paid on every request. A 3,000-token instruction file is 3,000 tokens you cannot use for anything else, in every conversation, forever. Ruthlessly edit what's not actively changing responses.</p>
+<p><strong>Attach files selectively.</strong> The most common budget mistake is attaching entire files when only a section is relevant. Be specific about what you attach. Reference files by name when the model knows your project structure already.</p>
+<p><strong>Write for retrieval, not comprehension.</strong> Use headings and bullet lists. The model weights structured content more efficiently than dense prose.</p>
+<hr />
+<h2 id="part-10-reference">Part 10: Reference<a class="headerlink" href="#part-10-reference" title="Permanent link">&para;</a></h2>
+<h3 id="context-window-assembly-order">Context Window Assembly Order<a class="headerlink" href="#context-window-assembly-order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>SYSTEM PROMPT (assembled once):
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  1. Core identity &amp; global rules
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  2. General instructions (model-tuned)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  3. Tool use instructions
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  4. Output format instructions
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  5. Custom instructions (all *.instructions.md files, alphabetical)
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>  6. copilot-instructions.md (always last among instructions)
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>  7. Active custom agent instructions (always last of all)
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>USER MESSAGE #1:
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  - Environment info (OS, version)
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  - Workspace info (file tree)
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>USER MESSAGE #2:
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>  - Context info (date, terminals)
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>  - Prompt file contents (if invoked)
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>  - Attached file contents
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>  - Your actual message
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>CONVERSATION HISTORY (grows per turn):
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>  - [Accumulating exchanges, tool call results, responses]
+</code></pre></div>
+<h3 id="key-file-locations">Key File Locations<a class="headerlink" href="#key-file-locations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Project-scoped:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  .github/instructions/         ← custom instructions
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  .github/prompts/              ← prompt files
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  .github/agents/               ← custom agents
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  .github/skills/               ← agent skills (Session 2)
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>User-scoped (global across all projects):
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  ~/Library/Application Support/Code/User/prompts/   (macOS)
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  %APPDATA%\Code\User\prompts\                       (Windows)
+</code></pre></div>
+<h3 id="the-four-context-primitives-at-a-glance">The Four Context Primitives at a Glance<a class="headerlink" href="#the-four-context-primitives-at-a-glance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>File Pattern</th>
+<th>Location in Prompt</th>
+<th>Activation</th>
+<th>Context Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom Instructions</td>
+<td><code>*.instructions.md</code></td>
+<td>System prompt (end)</td>
+<td>Always</td>
+<td>Per-request</td>
+</tr>
+<tr>
+<td>Prompt Files</td>
+<td><code>*.prompt.md</code></td>
+<td>User message (top)</td>
+<td>Manual <code>/slash</code></td>
+<td>Per-invocation</td>
+</tr>
+<tr>
+<td>Custom Agents</td>
+<td><code>*.agent.md</code></td>
+<td>System prompt (last)</td>
+<td>Mode switch</td>
+<td>While active</td>
+</tr>
+<tr>
+<td>Agent Skills</td>
+<td><code>SKILL.md</code> folder</td>
+<td>Progressive load</td>
+<td>Auto-discovered</td>
+<td>On-demand</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quick-decision-guide">Quick Decision Guide<a class="headerlink" href="#quick-decision-guide" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>You want to...</th>
+<th>Use this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Share project architecture with every request</td>
+<td>Custom instruction</td>
+</tr>
+<tr>
+<td>Enforce a library version or coding pattern globally</td>
+<td>Custom instruction</td>
+</tr>
+<tr>
+<td>Invoke a complex multi-step prompt with one slash command</td>
+<td>Prompt file</td>
+</tr>
+<tr>
+<td>Switch models automatically for a specific task</td>
+<td>Prompt file (set <code>model:</code> in front matter)</td>
+</tr>
+<tr>
+<td>Give the agent a specific persona, tools, and workflow</td>
+<td>Custom agent</td>
+</tr>
+<tr>
+<td>Restrict what tools the agent can use in a given mode</td>
+<td>Custom agent</td>
+</tr>
+<tr>
+<td>Teach the agent a domain capability (PDF, Excel, etc.)</td>
+<td>Agent skill (Session 2)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="signs-that-context-needs-a-reset">Signs That Context Needs a Reset<a class="headerlink" href="#signs-that-context-needs-a-reset" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Copilot ignores constraints you specified earlier</li>
+<li>Responses become generic despite specific instructions</li>
+<li>The agent re-introduces rejected approaches</li>
+<li>Code drifts away from established project patterns</li>
+<li>VS Code prompts you that the context limit is approaching</li>
+</ul>
+<h3 id="context-reset-approaches">Context Reset Approaches<a class="headerlink" href="#context-reset-approaches" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Use When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New chat session</td>
+<td>Phase boundary, task complete, context feels contaminated</td>
+</tr>
+<tr>
+<td>Subagent (Session 2)</td>
+<td>Single heavy subtask within a larger workflow</td>
+</tr>
+<tr>
+<td>Compact summary handoff <code>/compact</code></td>
+<td>Continuing work that started in another session</td>
+</tr>
+<tr>
+<td>Clear + re-attach</td>
+<td>Files changed, want model to see current state</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Every time you send a message to Copilot, you contribute a few words to a document that Copilot is largely assembling itself. The system prompt, workspace structure, environment info, and your persistent instructions are all there before your cursor reaches the end of your sentence.</p>
+<p>Understanding this architecture changes how you work. You stop treating Copilot as a chatbot and start treating it as a composable system. You write concise instructions because you understand they persist forever. You start new chats deliberately because you know that context rot is real. You reach for prompt files when you find yourself typing the same thing repeatedly. You build custom agents when you want repeatable, scoped behaviour.</p>
+<p>The foundation is not just knowing what these primitives are. It is knowing <em>where they go</em> and <em>when that matters</em>. Everything in Session 2 - subagents, agent skills, hooks - builds on this mental model. Get the foundation right and everything else clicks into place.</p>
+<hr />
+<h2 id="reference-links">Reference Links<a class="headerlink" href="#reference-links" title="Permanent link">&para;</a></h2>
+<p>See <a href="../All_Links/">All_Links.md</a> - <strong>Session 1</strong> section for all documentation, guides, and community resources referenced in this session.</p>
+<p><strong>Key starting points:</strong>
+- <a href="https://docs.github.com/en/copilot/customizing-copilot/copilot-customization-cheat-sheet">GitHub Copilot Customization Cheat Sheet</a>
+- <a href="https://github.com/github/awesome-copilot">Awesome GitHub Copilot (community hub)</a>
+- <a href="https://code.visualstudio.com/docs/copilot/chat/agent-mode">VS Code Agent Mode docs</a>
+- <a href="https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions">Custom Instructions - GitHub Docs</a>
+- <a href="https://code.visualstudio.com/docs/copilot/customization/prompt-files">Prompt Files - VS Code docs</a>
+- <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents">Custom Agents - GitHub Docs</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/SaravananRajaraman/Prompt2Production" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.highlight", "search.share", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

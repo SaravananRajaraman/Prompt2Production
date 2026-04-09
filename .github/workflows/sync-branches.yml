@@ -1,0 +1,128 @@
+name: Sync Main to Website Branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+      - '_config.yml'
+      - 'assets/**'
+      - 'examples/**'
+      - '!.github/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch all branches
+        run: git fetch origin
+
+      - name: Sync to website branch
+        run: |
+          # Create website branch if it doesn't exist
+          if ! git rev-parse --verify origin/website >/dev/null 2>&1; then
+            git checkout -b website origin/main
+            git push origin website
+            exit 0
+          fi
+          
+          # Checkout and update website branch
+          git checkout website
+          git pull origin website
+          
+          # Merge main into website
+          git merge origin/main -m "chore: auto-sync from main branch [skip ci]" --allow-unrelated-histories || {
+            # If there are conflicts, prefer main's version for core files
+            git merge --abort
+            git checkout origin/main -- .
+            git add -A
+            git commit -m "chore: auto-sync from main branch [skip ci]"
+          }
+          
+          # Push to website
+          git push origin website
+
+      - name: Verify sync
+        run: |
+          echo "✅ Website branch synced successfully"
+          echo "Latest commit on website:"
+          git log website --oneline -1
+name: Sync Main to Website Branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+      - '_config.yml'
+      - 'assets/**'
+      - 'examples/**'
+      - '!.github/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch all branches
+        run: git fetch origin
+
+      - name: Sync to website branch
+        run: |
+          # Create website branch if it doesn't exist
+          if ! git rev-parse --verify origin/website >/dev/null 2>&1; then
+            git checkout -b website origin/main
+            git push origin website
+            exit 0
+          fi
+          
+          # Checkout and update website branch
+          git checkout website
+          git pull origin website
+          
+          # Merge main into website
+          git merge origin/main -m "chore: auto-sync from main branch [skip ci]" --allow-unrelated-histories || {
+            # If there are conflicts, prefer main's version for core files
+            git merge --abort
+            git checkout origin/main -- .
+            git add -A
+            git commit -m "chore: auto-sync from main branch [skip ci]"
+          }
+          
+          # Push to website
+          git push origin website
+
+      - name: Verify sync
+        run: |
+          echo "✅ Website branch synced successfully"
+          echo "Latest commit on website:"
+          git log website --oneline -1

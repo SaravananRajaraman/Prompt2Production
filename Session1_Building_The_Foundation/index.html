@@ -2402,26 +2402,28 @@
 <h2 id="part-4-the-system-prompt-you-never-write">Part 4: The System Prompt You Never Write<a class="headerlink" href="#part-4-the-system-prompt-you-never-write" title="Permanent link">&para;</a></h2>
 <h3 id="what-happens-when-you-send-a-message">What Happens When You Send a Message<a class="headerlink" href="#what-happens-when-you-send-a-message" title="Permanent link">&para;</a></h3>
 <p>Before your words reach the language model, Copilot assembles a complete prompt. Every layer of that assembly affects the output.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌──────────────────────────────────────────────────────────┐
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│                      SYSTEM PROMPT                       │
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│  1. Core identity &amp; global rules (2-3 lines)             │
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│  2. General instructions (model-specific quirks)         │
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│  3. Tool use instructions (edit, terminal, todos…)       │
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│  4. Output format instructions (file pills, parsing)     │
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│  5. YOUR custom instructions  ← you control this         │
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│  6. YOUR custom agent instructions ← you control this    │
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├──────────────────────────────────────────────────────────┤
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│                    USER MESSAGE #1                       │
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│  Environment info (OS, VS Code version)                  │
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│  Workspace info (project structure, file tree)           │
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├──────────────────────────────────────────────────────────┤
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│                    USER MESSAGE #2                       │
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│  Context info (current date/time, open terminals)        │
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│  YOUR prompt file contents (if used) ← you control this  │
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│  Editor context (any files you attached)                 │
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│  YOUR actual message                                     │
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>└──────────────────────────────────────────────────────────┘
-</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Prompt Layer</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System Prompt</td>
+<td>1. Core identity &amp; global rules (2-3 lines)<br>2. General instructions (model-specific quirks)<br>3. Tool use instructions (edit, terminal, todos…)<br>4. Output format instructions (file pills, parsing)<br>5. YOUR custom instructions ← you control this<br>6. YOUR custom agent instructions ← you control this</td>
+</tr>
+<tr>
+<td>User Message #1</td>
+<td>Environment info (OS, VS Code version)<br>Workspace info (project structure, file tree)</td>
+</tr>
+<tr>
+<td>User Message #2</td>
+<td>Context info (current date/time, open terminals)<br>YOUR prompt file contents (if used) ← you control this<br>Editor context (any files you attached)<br>YOUR actual message</td>
+</tr>
+</tbody>
+</table>
 <p>The model sees all of this as a single continuous document. It has no sense of "the system prompt" or "the user message" - those are protocol-level labels. What the model processes is the full concatenation.</p>
 <h3 id="the-system-prompt-layers">The System Prompt Layers<a class="headerlink" href="#the-system-prompt-layers" title="Permanent link">&para;</a></h3>
 <p><strong>Layers 1–4 - Copilot's built-in content.</strong> Core identity, model-specific quirks, tool call syntax, and output formatting. You don't write these, and you don't see them in normal use. The chat debug view is the only way to inspect them.</p>
@@ -2435,26 +2437,26 @@
 <p>The canonical use case is project-level knowledge: your architecture patterns, your preferred libraries, your team's naming conventions, your framework version. Anything that should quietly inform every response.</p>
 <p>VS Code can <strong>generate</strong> instructions for you. Click the gear icon in Copilot chat and choose "Generate Chat Instructions". It will analyse your project and produce a starting file.</p>
 <h3 id="where-they-live">Where They Live<a class="headerlink" href="#where-they-live" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.github/
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  instructions/
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    copilot-instructions.md   ← global project instructions
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    nextjs.instructions.md    ← additional instructions
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    typescript.instructions.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.github/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  instructions/
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    copilot-instructions.md   ← global project instructions
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    nextjs.instructions.md    ← additional instructions
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    typescript.instructions.md
 </code></pre></div>
 <p>You can have as many instruction files as you like. They all land in the system prompt, with <code>copilot-instructions.md</code> always last. Instructions can also be placed in the user data folder (outside the project), making them globally available across all workspaces.</p>
 <h3 id="what-goes-in-them">What Goes in Them<a class="headerlink" href="#what-goes-in-them" title="Permanent link">&para;</a></h3>
 <p>Good custom instructions are <strong>informational, not instructional</strong>. They tell the agent what is true about the project, not how to behave.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Project: E-commerce Platform</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="gu">## Architecture</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">-</span><span class="w"> </span>Backend: Node.js with Express, TypeScript strict mode
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">-</span><span class="w"> </span>Frontend: Next.js 14 with App Router
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">-</span><span class="w"> </span>Database: PostgreSQL via Prisma ORM
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">-</span><span class="w"> </span>Auth: NextAuth v5
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="gu">## Patterns</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>All API routes return { data, error } shaped responses
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">-</span><span class="w"> </span>Services live in /src/services/, controllers in /src/controllers/
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">-</span><span class="w"> </span>Tests use Vitest; run with <span class="sb">`npm test`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Project: E-commerce Platform</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gu">## Architecture</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">-</span><span class="w"> </span>Backend: Node.js with Express, TypeScript strict mode
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">-</span><span class="w"> </span>Frontend: Next.js 14 with App Router
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">-</span><span class="w"> </span>Database: PostgreSQL via Prisma ORM
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">-</span><span class="w"> </span>Auth: NextAuth v5
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="gu">## Patterns</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">-</span><span class="w"> </span>All API routes return { data, error } shaped responses
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">-</span><span class="w"> </span>Services live in /src/services/, controllers in /src/controllers/
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">-</span><span class="w"> </span>Tests use Vitest; run with <span class="sb">`npm test`</span>
 </code></pre></div>
 <h3 id="what-not-to-put-in-them">What Not to Put in Them<a class="headerlink" href="#what-not-to-put-in-them" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2463,15 +2465,15 @@
 <li>Large document content - pays token cost on every request, most of which are irrelevant</li>
 </ul>
 <p>Write for structure, not prose. The model weights structured content more effectively than dense paragraphs.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gh"># DON&#39;T (requires reading to extract structure):</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>We&#39;re a Next.js team working with TypeScript and we prefer to use Prisma for
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>our database interactions. Our tests are written in Vitest...
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="gh"># DO (structure is immediately visible):</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="gu">## Stack</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">-</span><span class="w"> </span>Next.js 14 (App Router), TypeScript strict
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">-</span><span class="w"> </span>Prisma ORM (PostgreSQL)
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">-</span><span class="w"> </span>Vitest for unit tests
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># DON&#39;T (requires reading to extract structure):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>We&#39;re a Next.js team working with TypeScript and we prefer to use Prisma for
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>our database interactions. Our tests are written in Vitest...
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="gh"># DO (structure is immediately visible):</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="gu">## Stack</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">-</span><span class="w"> </span>Next.js 14 (App Router), TypeScript strict
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">-</span><span class="w"> </span>Prisma ORM (PostgreSQL)
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>Vitest for unit tests
 </code></pre></div>
 <h3 id="the-awesome-copilot-repository">The Awesome Copilot Repository<a class="headerlink" href="#the-awesome-copilot-repository" title="Permanent link">&para;</a></h3>
 <p><code>github.com/github/awesome-copilot</code> is a curated collection of instruction files, prompt files, and custom agents contributed by developers worldwide. If you work with a popular stack, check here before writing your own - there are likely high-quality instructions you can install directly.</p>
@@ -2481,20 +2483,20 @@
 <p>A prompt file is a reusable prompt template stored as a <code>.prompt.md</code> file. Where custom instructions are always active and invisible, prompt files are <strong>explicitly invoked</strong> - you call them with a <code>/</code> slash command in chat.</p>
 <p>The most useful mental model: a prompt file is a <strong>saved workflow step</strong>. Instead of typing the same complex prompt over and over, you define it once, give it a name, and invoke it with a slash.</p>
 <h3 id="anatomy-of-a-prompt-file">Anatomy of a Prompt File<a class="headerlink" href="#anatomy-of-a-prompt-file" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>---
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>description: Generate a new React component with tests
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>mode: agent
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="gu">model: claude-sonnet-4-5</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="gu">---</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>You are creating a new React component. Follow these steps precisely:
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">1.</span> Analyse the existing components in /src/components/ for style patterns
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">2.</span> Create the component file at /src/components/{{name}}/{{name}}.tsx
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">3.</span> Create a test file at /src/components/{{name}}/{{name}}.test.tsx
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">4.</span> Export from /src/components/index.ts
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>The component should follow the project&#39;s existing patterns exactly.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>---
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>description: Generate a new React component with tests
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>mode: agent
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gu">model: claude-sonnet-4-5</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="gu">---</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>You are creating a new React component. Follow these steps precisely:
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">1.</span> Analyse the existing components in /src/components/ for style patterns
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">2.</span> Create the component file at /src/components/{{name}}/{{name}}.tsx
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">3.</span> Create a test file at /src/components/{{name}}/{{name}}.test.tsx
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">4.</span> Export from /src/components/index.ts
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>The component should follow the project&#39;s existing patterns exactly.
 </code></pre></div>
 <p>The YAML front matter is where the power lives:
 - <code>description</code>: shown in the <code>/</code> command picker so you remember what each prompt does
@@ -2502,12 +2504,12 @@
 - <code>model</code>: the model to use when this prompt runs - <strong>overrides whatever model is currently selected</strong></p>
 <p>That last point - automatic model switching - is significant. You can write a planning prompt file that forces a switch to Claude Opus 4.5, and an implementation prompt file that switches to a smaller, cheaper model. The user types a slash command and Copilot handles the model routing automatically.</p>
 <h3 id="where-they-live_1">Where They Live<a class="headerlink" href="#where-they-live_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.github/
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  prompts/
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    generate-component.prompt.md
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    plan.prompt.md
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    generate-implementation-plan.prompt.md
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    remember.prompt.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.github/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  prompts/
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    generate-component.prompt.md
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    plan.prompt.md
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    generate-implementation-plan.prompt.md
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    remember.prompt.md
 </code></pre></div>
 <h3 id="where-they-land-in-the-prompt">Where They Land in the Prompt<a class="headerlink" href="#where-they-land-in-the-prompt" title="Permanent link">&para;</a></h3>
 <p>Prompt files go into the <strong>user message</strong> - above the context info section, before your actual message. This matters because every message you send with a prompt file re-inserts that file's contents. Over a long conversation, this accumulates. Keep prompt files focused to manage this cost.</p>
@@ -2524,55 +2526,55 @@
 <p>Custom agents define a <strong>persona and workflow</strong> for the agent. Where custom instructions add background knowledge and prompt files define reusable tasks, a custom agent changes who the agent <em>is</em> - what tools it has, how it approaches problems, what workflow it follows.</p>
 <p>Copilot ships with built-in agents: the default Agent mode, Plan mode, and Edit mode. You can create your own to match your specific workflows.</p>
 <h3 id="anatomy-of-a-custom-agent">Anatomy of a Custom Agent<a class="headerlink" href="#anatomy-of-a-custom-agent" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nn">---</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">implement</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implements code from an implementation plan document step by step</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">tools</span><span class="p">:</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edit</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terminal</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4.1-mini</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nn">---</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="l l-Scalar l-Scalar-Plain">You are an implementation agent. You receive an implementation plan document</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="l l-Scalar l-Scalar-Plain">and execute it precisely, step by step.</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="l l-Scalar l-Scalar-Plain">Rules</span><span class="p p-Indicator">:</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never deviate from the plan</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implement exactly one step, then stop and report completion</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests after each step</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If a step fails, diagnose and fix before moving to the next</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mark each step complete with [x] in the document</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nn">---</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">implement</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implements code from an implementation plan document step by step</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">tools</span><span class="p">:</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edit</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terminal</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4.1-mini</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nn">---</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="l l-Scalar l-Scalar-Plain">You are an implementation agent. You receive an implementation plan document</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="l l-Scalar l-Scalar-Plain">and execute it precisely, step by step.</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="l l-Scalar l-Scalar-Plain">Rules</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never deviate from the plan</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implement exactly one step, then stop and report completion</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests after each step</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If a step fails, diagnose and fix before moving to the next</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mark each step complete with [x] in the document</span>
 </code></pre></div>
 <p>Key elements:
 - <code>tools</code>: the tools this agent can use - you can restrict access intentionally
 - <code>model</code>: the model this agent uses by default
 - The body: the agent's identity, workflow, and constraints</p>
 <h3 id="where-they-live-and-land">Where They Live and Land<a class="headerlink" href="#where-they-live-and-land" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>.github/
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  agents/
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    planner.agent.md
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    implement.agent.md
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    review.agent.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>.github/
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  agents/
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    planner.agent.md
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    implement.agent.md
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    review.agent.md
 </code></pre></div>
 <p>Custom agent instructions land in the system prompt <strong>after your custom instructions</strong> - always last. This position gives your agent instructions high contextual weight relative to everything that precedes them.</p>
 <h3 id="handoffs">Handoffs<a class="headerlink" href="#handoffs" title="Permanent link">&para;</a></h3>
 <p>Custom agents support <strong>handoffs</strong> - a mechanism to pass control from one agent to another with clickable buttons after a response.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nn">---</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planner</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">handoffs</span><span class="p">:</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">implement</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Implement</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">plan&quot;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">review</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Review</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">plan&quot;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nn">---</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nn">---</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planner</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">handoffs</span><span class="p">:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">implement</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Implement</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">plan&quot;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">review</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Review</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">plan&quot;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nn">---</span>
 </code></pre></div>
 <h3 id="restricting-tool-access">Restricting Tool Access<a class="headerlink" href="#restricting-tool-access" title="Permanent link">&para;</a></h3>
 <p>One of the most valuable things a custom agent can do is <strong>restrict</strong> what tools it has. A planning agent that cannot run terminal commands cannot accidentally execute anything during the planning phase.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">tools</span><span class="p">:</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="c1"># No edit, no terminal - research only</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">tools</span><span class="p">:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="c1"># No edit, no terminal - research only</span>
 </code></pre></div>
 <p>This is not just safety - it also improves focus. An agent that knows it can only read files will approach its task differently from one with full tool access.</p>
 <h3 id="the-three-primitives-are-building-blocks">The Three Primitives Are Building Blocks<a class="headerlink" href="#the-three-primitives-are-building-blocks" title="Permanent link">&para;</a></h3>
@@ -2731,10 +2733,10 @@
 <p>These are not random failures. They are the signature of a diluted context.</p>
 <h3 id="strategies-for-managing-context">Strategies for Managing Context<a class="headerlink" href="#strategies-for-managing-context" title="Permanent link">&para;</a></h3>
 <p><strong>Design for phase boundaries.</strong> Every complex task has natural phases. Each phase boundary is a candidate for a new chat session. The overhead of a few words of context hand-off is almost always worth the quality gain.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Phase 1: Research and plan         → New chat after phase completes
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Phase 2: Write implementation doc  → New chat after phase completes
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Phase 3: Execute implementation    → New chat per step or per commit
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Phase 4: Review and test           → New chat
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Phase 1: Research and plan         → New chat after phase completes
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Phase 2: Write implementation doc  → New chat after phase completes
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Phase 3: Execute implementation    → New chat per step or per commit
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Phase 4: Review and test           → New chat
 </code></pre></div>
 <p><strong>Use subagents for heavy lifting.</strong> When a task requires deep exploration (reading dozens of files, generating large amounts of code), a subagent absorbs that token cost in an isolated context window. Only its final summary returns to your main conversation. (Covered fully in Session 2.)</p>
 <p><strong>Keep custom instructions lean.</strong> Instructions are paid on every request. A 3,000-token instruction file is 3,000 tokens you cannot use for anything else, in every conversation, forever. Ruthlessly edit what's not actively changing responses.</p>
@@ -2743,38 +2745,38 @@
 <hr />
 <h2 id="part-10-reference">Part 10: Reference<a class="headerlink" href="#part-10-reference" title="Permanent link">&para;</a></h2>
 <h3 id="context-window-assembly-order">Context Window Assembly Order<a class="headerlink" href="#context-window-assembly-order" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>SYSTEM PROMPT (assembled once):
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  1. Core identity &amp; global rules
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  2. General instructions (model-tuned)
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  3. Tool use instructions
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  4. Output format instructions
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  5. Custom instructions (all *.instructions.md files, alphabetical)
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>  6. copilot-instructions.md (always last among instructions)
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>  7. Active custom agent instructions (always last of all)
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>USER MESSAGE #1:
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  - Environment info (OS, version)
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  - Workspace info (file tree)
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>USER MESSAGE #2:
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>  - Context info (date, terminals)
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>  - Prompt file contents (if invoked)
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>  - Attached file contents
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>  - Your actual message
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>CONVERSATION HISTORY (grows per turn):
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>  - [Accumulating exchanges, tool call results, responses]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>SYSTEM PROMPT (assembled once):
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  1. Core identity &amp; global rules
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  2. General instructions (model-tuned)
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  3. Tool use instructions
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  4. Output format instructions
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  5. Custom instructions (all *.instructions.md files, alphabetical)
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  6. copilot-instructions.md (always last among instructions)
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>  7. Active custom agent instructions (always last of all)
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>USER MESSAGE #1:
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  - Environment info (OS, version)
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  - Workspace info (file tree)
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>USER MESSAGE #2:
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>  - Context info (date, terminals)
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>  - Prompt file contents (if invoked)
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>  - Attached file contents
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>  - Your actual message
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>CONVERSATION HISTORY (grows per turn):
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>  - [Accumulating exchanges, tool call results, responses]
 </code></pre></div>
 <h3 id="key-file-locations">Key File Locations<a class="headerlink" href="#key-file-locations" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Project-scoped:
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  .github/instructions/         ← custom instructions
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  .github/prompts/              ← prompt files
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  .github/agents/               ← custom agents
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  .github/skills/               ← agent skills (Session 2)
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>User-scoped (global across all projects):
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  ~/Library/Application Support/Code/User/prompts/   (macOS)
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  %APPDATA%\Code\User\prompts\                       (Windows)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Project-scoped:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  .github/instructions/         ← custom instructions
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  .github/prompts/              ← prompt files
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  .github/agents/               ← custom agents
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  .github/skills/               ← agent skills (Session 2)
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>User-scoped (global across all projects):
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>  ~/Library/Application Support/Code/User/prompts/   (macOS)
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>  %APPDATA%\Code\User\prompts\                       (Windows)
 </code></pre></div>
 <h3 id="the-four-context-primitives-at-a-glance">The Four Context Primitives at a Glance<a class="headerlink" href="#the-four-context-primitives-at-a-glance" title="Permanent link">&para;</a></h3>
 <table>

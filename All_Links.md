@@ -51,7 +51,7 @@
 
 ---
 
-## Session 2 - Context Engineering Primitives
+## Context Engineering Primitives
 
 ### Custom Instructions (`.instructions.md`)
 

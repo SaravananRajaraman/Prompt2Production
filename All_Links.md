@@ -1,4 +1,4 @@
-# GitHub Copilot Level Up - All Links
+# All Links
 
 > One file to find them all. Every reference link from both sessions, organised by session and category.
 >

@@ -1,0 +1,76 @@
+site_name: Prompt2Production
+site_description: Learn and skill up with GitHub Copilot — from Ask to multi-agent orchestration
+site_url: https://SaravananRajaraman.github.io/Prompt2Production/
+repo_url: https://github.com/SaravananRajaraman/Prompt2Production
+repo_name: Prompt2Production
+docs_dir: docs
+nav:
+  - Home: index.md
+  - Getting Started: Getting_Started_Primer.md
+  - Learning Paths: Learning_Paths.md
+  - Session 1 — Foundation: Session1_Building_The_Foundation.md
+  - Session 2 — Advanced: Session2_Advanced_Agent_Capabilities.md
+  - Tutorials: Tutorials_Hands_On.md
+  - FAQ: FAQ_For_Beginners.md
+  - All Links: All_Links.md
+  - Examples: examples/README.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SaravananRajaraman/Prompt2Production
+      name: GitHub

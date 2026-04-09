@@ -20,7 +20,7 @@ The repository uses **GitHub Actions** to automatically build and deploy documen
 2. You commit and push your changes
 3. GitHub Actions automatically triggers a build workflow
 4. The workflow builds the site with MkDocs and deploys to GitHub Pages
-5. The site updates in seconds — no manual steps needed
+5. The site updates in seconds - no manual steps needed
 
 ---
 
@@ -51,7 +51,7 @@ The workflow performs these steps:
 The built site is deployed to the **`website` branch**, which is configured as the GitHub Pages source. This means:
 
 - When you view https://SaravananRajaraman.github.io/Prompt2Production/, you're viewing the contents of the `website` branch
-- The `website` branch is **fully managed by the automated build** — don't edit files there directly
+- The `website` branch is **fully managed by the automated build** - don't edit files there directly
 
 ---
 
@@ -77,7 +77,7 @@ When the workflow builds and deploys:
 1. Create or edit markdown files in the `docs/` directory on the `main` branch
 2. Commit your changes: `git commit -m "Update documentation about X"`
 3. Push to `main`: `git push origin main`
-4. **Automation takes over** — GitHub Actions builds and deploys within 1-2 minutes
+4. **Automation takes over** - GitHub Actions builds and deploys within 1-2 minutes
 
 ### What You DON'T Need to Do
 
@@ -99,7 +99,7 @@ mkdocs serve
 # Open http://localhost:8000 in your browser
 ```
 
-Then commit and push — the automated workflow will handle deployment.
+Then commit and push - the automated workflow will handle deployment.
 
 ---
 
@@ -127,7 +127,7 @@ The workflow uses the `--force` flag when deploying. This means:
 - **No leftover files**: Old pages that have been deleted from `docs/` are automatically removed from the published site
 - **Clean slate**: Prevents stale content or orphaned files from persisting
 
-This is safe and intentional — the `website` branch is *meant* to be fully managed by the build process.
+This is safe and intentional - the `website` branch is *meant* to be fully managed by the build process.
 
 ---
 
@@ -152,7 +152,7 @@ If the Actions job fails, check the job logs for error messages (usually related
 **A:** You can use the `workflow_dispatch` trigger to manually run the deploy job without code changes (though this isn't usually necessary).
 
 ### Q: Can I edit files directly on the `website` branch?
-**A:** Technically yes, but don't — they'll be overwritten on the next deploy. Always edit on `main` instead.
+**A:** Technically yes, but don't - they'll be overwritten on the next deploy. Always edit on `main` instead.
 
 ### Q: How do I add new pages to the navigation?
 **A:** Edit the `nav:` section in `mkdocs.yml` on the `main` branch. The automation will rebuild the navigation menu on the next deploy.
@@ -164,11 +164,11 @@ If the Actions job fails, check the job logs for error messages (usually related
 
 ## 🔗 Related Resources
 
-- **[mkdocs.yml](../mkdocs.yml)** — Site configuration (theme, navigation, fonts)
-- **[.github/workflows/deploy-website.yml](../.github/workflows/deploy-website.yml)** — The automation workflow
-- **[GitHub Pages Documentation](https://docs.github.com/en/pages)** — How GitHub Pages works
-- **[MkDocs Material Theme](https://squidfunk.github.io/mkdocs-material/)** — Documentation about the theme used for this site
+- **[mkdocs.yml](../mkdocs.yml)** - Site configuration (theme, navigation, fonts)
+- **[.github/workflows/deploy-website.yml](../.github/workflows/deploy-website.yml)** - The automation workflow
+- **[GitHub Pages Documentation](https://docs.github.com/en/pages)** - How GitHub Pages works
+- **[MkDocs Material Theme](https://squidfunk.github.io/mkdocs-material/)** - Documentation about the theme used for this site
 
 ---
 
-*Last updated: April 2026 — Automation ensures this documentation hub stays current as you and the community contribute.*
+*Last updated: April 2026 - Automation ensures this documentation hub stays current as you and the community contribute.*

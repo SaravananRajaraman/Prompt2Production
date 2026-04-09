@@ -1,5 +1,5 @@
 site_name: Prompt2Production
-site_description: Learn and skill up with GitHub Copilot — from Ask mode to multi-agent orchestration
+site_description: Learn and skill up with GitHub Copilot - from Ask mode to multi-agent orchestration
 site_author: Saravanan Rajaraman
 site_url: https://SaravananRajaraman.github.io/Prompt2Production/
 repo_url: https://github.com/SaravananRajaraman/Prompt2Production
@@ -9,8 +9,8 @@ nav:
   - Home: index.md
   - Getting Started: Getting_Started_Primer.md
   - Learning Paths: Learning_Paths.md
-  - Session 1 — Foundation: Session1_Building_The_Foundation.md
-  - Session 2 — Advanced: Session2_Advanced_Agent_Capabilities.md
+  - Session 1 - Foundation: Session1_Building_The_Foundation.md
+  - Session 2 - Advanced: Session2_Advanced_Agent_Capabilities.md
   - Tutorials: Tutorials_Hands_On.md
   - FAQ: FAQ_For_Beginners.md
   - All Links: All_Links.md

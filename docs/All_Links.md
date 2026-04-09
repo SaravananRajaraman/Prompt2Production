@@ -1,4 +1,4 @@
-# GitHub Copilot — All Links & Resources
+# GitHub Copilot - All Links & Resources
 
 > Complete reference for GitHub Copilot documentation, community resources, and learning materials.
 >

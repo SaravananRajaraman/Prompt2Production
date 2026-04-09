@@ -4,7 +4,7 @@ title: Getting Started Primer
 nav_order: 1
 ---
 
-# GitHub Copilot in 5 Minutes — The Three Modes
+# GitHub Copilot in 5 Minutes - The Three Modes
 
 > **New to GitHub Copilot in VS Code?** This is your fastest entry point. Learn Ask, Plan, and Agent modes, then write your first prompt.
 
@@ -15,19 +15,19 @@ nav_order: 1
 GitHub Copilot works in three distinct modes. Each is designed for a different job. You'll use all three in a typical week, but let's start with the one that feels most natural.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                 GITHUB COPILOT MODES                         │
-├──────────────┬──────────────────┬─────────────────────────────┤
-│     ASK      │      PLAN        │         AGENT               │
-├──────────────┼──────────────────┼─────────────────────────────┤
-│ Quick Q&A    │ Design First     │ Autonomous Execution        │
-│ Chat in      │ Review Plan      │ Edits Files                 │
-│ VS Code      │ Approve First    │ Runs Tests                  │
-│              │ Then Code        │ Loops Until Done            │
-│              │                  │                             │
-│ "Explain     │ "Design a login  │ "Build a complete user     │
-│  this error" │ page"            │ authentication system"      │
-└──────────────┴──────────────────┴─────────────────────────────┘
+┌───────────────────────────────────────────────────────────┐
+│                 GITHUB COPILOT MODES                      │
+├──────────────┬──────────────────┬─────────────────────────┤
+│     ASK      │      PLAN        │         AGENT           │
+├──────────────┼──────────────────┼─────────────────────────┤
+│ Quick Q&A    │ Design First     │ Autonomous Execution    │
+│ Chat in      │ Review Plan      │ Edits Files             │
+│ VS Code      │ Approve First    │ Runs Tests              │
+│              │ Then Code        │ Loops Until Done        │
+│              │                  │                         │
+│ "Explain     │ "Design a login  │ "Build a complete user  │
+│  this error" │ page"            │ authentication system"  │
+└──────────────┴──────────────────┴─────────────────────────┘
 ```
 
 ---

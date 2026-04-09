@@ -214,25 +214,25 @@ Here's why: Language models read the *entire* context window and produce respons
 Before your words reach the language model, Copilot assembles a complete prompt. Every layer of that assembly affects the output.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                      SYSTEM PROMPT                          │
-│  1. Core identity & global rules (2-3 lines)                │
-│  2. General instructions (model-specific quirks)            │
-│  3. Tool use instructions (edit, terminal, todos…)          │
-│  4. Output format instructions (file pills, parsing)        │
-│  5. YOUR custom instructions  ← you control this            │
-│  6. YOUR custom agent instructions ← you control this       │
-├─────────────────────────────────────────────────────────────┤
-│                    USER MESSAGE #1                           │
-│  Environment info (OS, VS Code version)                     │
-│  Workspace info (project structure, file tree)              │
-├─────────────────────────────────────────────────────────────┤
-│                    USER MESSAGE #2                           │
-│  Context info (current date/time, open terminals)           │
-│  YOUR prompt file contents (if used) ← you control this    │
-│  Editor context (any files you attached)                    │
-│  YOUR actual message                                        │
-└─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│                      SYSTEM PROMPT                       │
+│  1. Core identity & global rules (2-3 lines)             │
+│  2. General instructions (model-specific quirks)         │
+│  3. Tool use instructions (edit, terminal, todos…)       │
+│  4. Output format instructions (file pills, parsing)     │
+│  5. YOUR custom instructions  ← you control this         │
+│  6. YOUR custom agent instructions ← you control this    │
+├──────────────────────────────────────────────────────────┤
+│                    USER MESSAGE #1                       │
+│  Environment info (OS, VS Code version)                  │
+│  Workspace info (project structure, file tree)           │
+├──────────────────────────────────────────────────────────┤
+│                    USER MESSAGE #2                       │
+│  Context info (current date/time, open terminals)        │
+│  YOUR prompt file contents (if used) ← you control this  │
+│  Editor context (any files you attached)                 │
+│  YOUR actual message                                     │
+└──────────────────────────────────────────────────────────┘
 ```
 
 The model sees all of this as a single continuous document. It has no sense of "the system prompt" or "the user message" - those are protocol-level labels. What the model processes is the full concatenation.

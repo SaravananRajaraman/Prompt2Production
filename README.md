@@ -12,11 +12,11 @@ Welcome to the **Prompt2Production** repository! This project contains comprehen
 
 | I'm... | Start here |
 |--------|-----------|
-| **Completely new to Copilot** | → [Getting Started Primer](./documentation/Getting_Started_Primer.md) (5 min) |
-| **Already using Ask mode** | → [Learning Paths](./documentation/Learning_Paths.md#path-2-level-up-ask-to-agent) |
-| **Want quick answers to specific questions** | → [FAQ for Beginners](./documentation/FAQ_For_Beginners.md) |
-| **Ready for hands-on tutorials** | → [Hands-On Tutorials](./documentation/Tutorials_Hands_On.md) |
-| **Want advanced workflows & customization** | → [Learning Paths](./documentation/Learning_Paths.md#path-3-advanced-workflows) → [Session 2](./documentation/Session2_Advanced_Agent_Capabilities.md) |
+| **Completely new to Copilot** | → [Getting Started Primer](./docs/Getting_Started_Primer.md) (5 min) |
+| **Already using Ask mode** | → [Learning Paths](./docs/Learning_Paths.md#path-2-level-up-ask-to-agent) |
+| **Want quick answers to specific questions** | → [FAQ for Beginners](./docs/FAQ_For_Beginners.md) |
+| **Ready for hands-on tutorials** | → [Hands-On Tutorials](./docs/Tutorials_Hands_On.md) |
+| **Want advanced workflows & customization** | → [Learning Paths](./docs/Learning_Paths.md#path-3-advanced-workflows) → [Session 2](./docs/Session2_Advanced_Agent_Capabilities.md) |
 
 ---
 
@@ -26,16 +26,16 @@ Welcome to the **Prompt2Production** repository! This project contains comprehen
 
 These are designed for people who are new to Copilot. Start here.
 
-- **[Getting Started Primer](./documentation/Getting_Started_Primer.md)** - The three modes in 5 minutes. Visual, quick, actionable.
-- **[FAQ for Beginners](./documentation/FAQ_For_Beginners.md)** - Quick answers to the 20 most common questions.
-- **[Learning Paths](./documentation/Learning_Paths.md)** - Choose your adventure. Three paths from beginner to advanced.
-- **[Hands-On Tutorials](./documentation/Tutorials_Hands_On.md)** - Learn by doing. Three guided walkthroughs (Ask, Plan, Agent modes).
+- **[Getting Started Primer](./docs/Getting_Started_Primer.md)** - The three modes in 5 minutes. Visual, quick, actionable.
+- **[FAQ for Beginners](./docs/FAQ_For_Beginners.md)** - Quick answers to the 20 most common questions.
+- **[Learning Paths](./docs/Learning_Paths.md)** - Choose your adventure. Three paths from beginner to advanced.
+- **[Hands-On Tutorials](./docs/Tutorials_Hands_On.md)** - Learn by doing. Three guided walkthroughs (Ask, Plan, Agent modes).
 
 ### 🔵 Foundation & Conceptual Understanding
 
 For people ready to understand *how* Copilot works and *why*.
 
-- **[Session 1: Building the Foundation](./documentation/Session1_Building_The_Foundation.md)** `[FOUNDATIONAL]`  
+- **[Session 1: Building the Foundation](./docs/Session1_Building_The_Foundation.md)** `[FOUNDATIONAL]`  
   The complete foundation layer: three interaction modes (Ask, Plan, Agent), context engineering, POWER prompting framework, and the three customization primitives (Custom Instructions, Prompt Files, Custom Agents).
   
   **Key sections:**
@@ -48,7 +48,7 @@ For people ready to understand *how* Copilot works and *why*.
 
 For people ready to orchestrate teams of AI agents and build production systems.
 
-- **[Session 2: Advanced Agent Capabilities](./documentation/Session2_Advanced_Agent_Capabilities.md)** `[ADVANCED]`  
+- **[Session 2: Advanced Agent Capabilities](./docs/Session2_Advanced_Agent_Capabilities.md)** `[ADVANCED]`  
   Build at scale: sub-agents, agent orchestration patterns, handoffs, Agent HQ, custom agent frontmatter, agent skills, and lifecycle governance with hooks.
   
   **Key sections:**
@@ -59,7 +59,7 @@ For people ready to orchestrate teams of AI agents and build production systems.
 
 ### 🔗 Reference
 
-- **[All Links & References](./documentation/All_Links.md)** - Curated links to official GitHub Copilot docs, context engineering deep reads, community resources, and learning hubs.
+- **[All Links & References](./docs/All_Links.md)** - Curated links to official GitHub Copilot docs, context engineering deep reads, community resources, and learning hubs.
 
 ---
 

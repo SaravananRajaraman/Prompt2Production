@@ -417,7 +417,7 @@ Copilot now generates a clear, step-by-step, team-ready plan.
 - ✅ You're iterating: "That's close, but change X to Y"
 - ✅ You rarely ask the same question twice
 
-If you're struggling, see ["My suggestion looks wrong"](#my-suggestion-looks-wrong-what-do-i-do) above.
+If you're struggling, see ["My suggestion looks wrong"](#q-my-suggestion-looks-wrong-what-do-i-do) above.
 
 ---
 

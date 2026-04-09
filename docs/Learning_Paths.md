@@ -173,7 +173,7 @@ You should already:
 
 ### Stage 3: Custom Agents (30 min)
 9. Read: [Session1_Building_The_Foundation.md](#custom-agents) - Agent file structure, frontmatter
-10. Read: [FAQ_For_Beginners.md#custom-agents](FAQ_For_Beginners.md#part-3) - Why you'd create one
+10. Read: [FAQ_For_Beginners.md#custom-agents](FAQ_For_Beginners.md#can-i-customize-copilot-for-my-team) - Why you'd create one
 11. **Hands-on:** Create `.agent.md` files for specialized roles:
     - Security Agent (`tools: ['read']`, trained on security best practices)
     - Testing Agent (`tools: ['edit', 'terminal']`, trained on test writing)
@@ -193,7 +193,7 @@ You should already:
 18. **Time check:** You can orchestrate teams of AI agents
 
 ### Stage 5: Agent Hooks & Governance (20 min)
-19. Read: [Session2_Advanced_Agent_Capabilities.md](#agent-hooks) - Lifecycle hooks for security, quality gates (if available in your version)
+19. Read: [Session2_Advanced_Agent_Capabilities.md#part-3-agent-hooks](Session2_Advanced_Agent_Capabilities.md#part-3-agent-hooks) - Lifecycle hooks for security, quality gates (if available in your version)
 20. **Hands-on:** Create a `hooks.json` file that enforces standards:
     - On every Agent execution: check for security issues
     - On every code generation: run linting

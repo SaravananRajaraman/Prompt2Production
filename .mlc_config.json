@@ -1,0 +1,27 @@
+{
+  "httpHeaders": [
+    {
+      "urls": ["https://github.com/", "https://api.github.com"],
+      "headers": {
+        "Authorization": "token ${GITHUB_TOKEN}"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    {
+      "pattern": "^https://github.status.io",
+      "comment": "GitHub status page"
+    }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://github.com/SaravananRajaraman/Prompt2Production/tree/main/"
+    }
+  ],
+  "timeout": "20s",
+  "retryOn": [429, 503],
+  "retryCount": 2,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206]
+}

@@ -142,7 +142,7 @@ Agent mode can:
 ## 📚 Still Have Questions?
 
 - **"When should I use Plan vs Agent?"** → [FAQ_For_Beginners.md](FAQ_For_Beginners.md#when-should-i-use-plan-vs-agent)
-- **"My Copilot suggestion looks wrong. What do I do?"** → [FAQ_For_Beginners.md](FAQ_For_Beginners.md#my-suggestion-looks-wrong-what-do-i-do)
+- **"My Copilot suggestion looks wrong. What do I do?"** → [FAQ_For_Beginners.md](FAQ_For_Beginners.md#q-my-suggestion-looks-wrong-what-do-i-do)
 - **"Can I customize Copilot for my team?"** → [Session1_Building_The_Foundation.md](Session1_Building_The_Foundation.md#part-5-custom-instructions) *(Advanced)*
 - **"All the links in one place"** → [All_Links.md](All_Links.md)
 

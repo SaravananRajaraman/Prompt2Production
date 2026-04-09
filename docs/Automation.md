@@ -162,12 +162,105 @@ If the Actions job fails, check the job logs for error messages (usually related
 
 ---
 
+## 🔗 Link Validation
+
+To ensure documentation links are always correct, the repository includes automated link checking through GitHub Actions.
+
+### How It Works
+
+The validation workflow (`.github/workflows/validate-links.yml`) runs automatically:
+
+- **On every push to `main`** 
+- **On pull requests** to catch broken links before merging
+
+**What it checks:**
+- ✅ All internal markdown links (relative paths like `./Getting_Started_Primer.md#anchor`)
+- ✅ All external URLs (https://, http://, etc.)
+- ✅ Exact anchor matches (headings must match anchor references precisely)
+
+**How it fails:**
+- 🚫 Broken internal links → workflow fails (prevents bad links from being deployed)
+- 🚫 Invalid external URLs → workflow fails (prevents pointing to non-existent resources)
+- 🚫 Mismatched anchors → workflow fails (prevents "link looks right but doesn't work" issues)
+
+### Testing Links Locally
+
+You can test links before committing using `markdown-link-check`:
+
+```bash
+# Install markdown-link-check (one time)
+npm install -g markdown-link-check
+
+# Test all links in a file
+markdown-link-check docs/Learning_Paths.md
+
+# Test all markdown files in docs/
+markdown-link-check docs/*.md
+```
+
+**Output example:**
+```
+✓ ./FAQ_For_Beginners.md
+✓ ./Session1_Building_The_Foundation.md#part-1-the-three-interaction-modes
+✗ ./NonExistent.md (404)
+✗ #broken-anchor (anchor not found)
+```
+
+### Configuration
+
+Link validation is configured in `.mlc_config.json`:
+
+- **Timeout**: 20 seconds per link
+- **Retries**: 2 attempts for rate-limited responses (429, 503)
+- **Accepted status codes**: 200, 206 (success), with retry logic for transient failures
+
+### For Contributors
+
+**Before committing**, ensure:
+1. All internal anchor references match actual heading text exactly
+   - ❌ Bad: `#my-heading` → pointing to heading `### Q: My Heading`
+   - ✅ Good: `#q-my-heading` → pointing to heading `### Q: My Heading`
+
+2. File paths are correct and relative to the current file
+   - ❌ Bad: `[Link](Getting_Started_Primer.md)` from `docs/` (missing `./`)
+   - ✅ Good: `[Link](./Getting_Started_Primer.md)` from `docs/`
+
+3. External URLs are active and accessible
+   - ❌ Broken: `https://resource-that-no-longer-exists.com`
+   - ✅ Good: `https://docs.github.com/en/copilot`
+
+**Testing workflow:**
+```
+1. Make changes to markdown files
+2. Run `markdown-link-check` locally to verify
+3. Push to main or create Pull Request
+4. GitHub Actions automatically validates
+5. Workflow passes ✅ or fails with details ❌
+```
+
+### Workflow File Reference
+
+The link validation is defined in:
+
+**`.github/workflows/validate-links.yml`**
+
+Key points:
+- **Action**: `gaurav-nelson/github-action-markdown-link-check`
+- **Scope**: Checks `docs/` folder and root `README.md`
+- **Config**: Uses `.mlc_config.json` for rules and timeouts
+- **Failure behavior**: Workflow fails if any links are broken (prevents merge)
+
+---
+
 ## 🔗 Related Resources
 
 - **[mkdocs.yml](../mkdocs.yml)** - Site configuration (theme, navigation, fonts)
-- **[.github/workflows/deploy-website.yml](../.github/workflows/deploy-website.yml)** - The automation workflow
+- **[.github/workflows/deploy-website.yml](../.github/workflows/deploy-website.yml)** - The deployment automation workflow
+- **[.github/workflows/validate-links.yml](../.github/workflows/validate-links.yml)** - The link validation workflow
+- **[.mlc_config.json](../.mlc_config.json)** - Link checker configuration
 - **[GitHub Pages Documentation](https://docs.github.com/en/pages)** - How GitHub Pages works
 - **[MkDocs Material Theme](https://squidfunk.github.io/mkdocs-material/)** - Documentation about the theme used for this site
+- **[markdown-link-check](https://github.com/tcort/markdown-link-check)** - The tool used for validation
 
 ---
 

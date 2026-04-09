@@ -13,36 +13,48 @@ author:
   url: https://github.com
 
 # Build Settings
-remote_theme: just-the-docs/just-the-docs@v0.12.0
+remote_theme: cotes2020/jekyll-theme-chirpy@latest
 
-# Just the Docs Configuration
-color_scheme: light
-search_enabled: true
-heading_anchors: true
+# Chirpy Configuration
 mermaid:
   version: "10"
 
-# Auxiliary Links
+theme_mode: auto  # auto, light, or dark
+search_enabled: true
+
+# Auxiliary Links & Social Media
 aux_links:
-  "Repository": "https://github.com/SaravananRajaraman/Prompt2Production"
+  "GitHub Repo": "https://github.com/SaravananRajaraman/Prompt2Production"
+
+social:
+  name: Prompt2Production
+  links:
+    - https://github.com/SaravananRajaraman/Prompt2Production
 
 # Markdown Settings
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  syntax_highlighter: rouge
 
 # Plugins
 plugins:
   - jekyll-github-metadata
+  - jekyll-paginate
+
+# Pagination
+paginate: 10
+paginate_path: /page:num/
 
 # Permalink Structure
 permalink: /:title/
 
-# Collections
-collections_dir: collections
+# URL
+url: "https://saravananrajaraman.github.io"
+baseurl: "/Prompt2Production"
 
 # Output
-safe: false
+safe: false 
 lsi: false
 incremental: false

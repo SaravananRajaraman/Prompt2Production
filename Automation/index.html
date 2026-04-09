@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Learn and skill up with GitHub Copilot — from Ask mode to multi-agent orchestration">
+        <meta name="description" content="Learn and skill up with GitHub Copilot - from Ask mode to multi-agent orchestration">
       
       
         <meta name="author" content="Saravanan Rajaraman">
@@ -287,7 +287,7 @@
   
     
   
-  Session 1 — Foundation
+  Session 1 - Foundation
 
       </a>
     </li>
@@ -306,7 +306,7 @@
   
     
   
-  Session 2 — Advanced
+  Session 2 - Advanced
 
       </a>
     </li>
@@ -556,7 +556,7 @@
   <span class="md-ellipsis">
     
   
-    Session 1 — Foundation
+    Session 1 - Foundation
   
 
     
@@ -583,7 +583,7 @@
   <span class="md-ellipsis">
     
   
-    Session 2 — Advanced
+    Session 2 - Advanced
   
 
     
@@ -1317,7 +1317,7 @@
 <li>You commit and push your changes</li>
 <li>GitHub Actions automatically triggers a build workflow</li>
 <li>The workflow builds the site with MkDocs and deploys to GitHub Pages</li>
-<li>The site updates in seconds — no manual steps needed</li>
+<li>The site updates in seconds - no manual steps needed</li>
 </ol>
 <hr />
 <h2 id="workflow-details">⚙️ Workflow Details<a class="headerlink" href="#workflow-details" title="Permanent link">&para;</a></h2>
@@ -1343,7 +1343,7 @@
 <p>The built site is deployed to the <strong><code>website</code> branch</strong>, which is configured as the GitHub Pages source. This means:</p>
 <ul>
 <li>When you view https://SaravananRajaraman.github.io/Prompt2Production/, you're viewing the contents of the <code>website</code> branch</li>
-<li>The <code>website</code> branch is <strong>fully managed by the automated build</strong> — don't edit files there directly</li>
+<li>The <code>website</code> branch is <strong>fully managed by the automated build</strong> - don't edit files there directly</li>
 </ul>
 <hr />
 <h2 id="what-gets-synced">📄 What Gets Synced<a class="headerlink" href="#what-gets-synced" title="Permanent link">&para;</a></h2>
@@ -1387,7 +1387,7 @@
 <li>Create or edit markdown files in the <code>docs/</code> directory on the <code>main</code> branch</li>
 <li>Commit your changes: <code>git commit -m "Update documentation about X"</code></li>
 <li>Push to <code>main</code>: <code>git push origin main</code></li>
-<li><strong>Automation takes over</strong> — GitHub Actions builds and deploys within 1-2 minutes</li>
+<li><strong>Automation takes over</strong> - GitHub Actions builds and deploys within 1-2 minutes</li>
 </ol>
 <h3 id="what-you-dont-need-to-do">What You DON'T Need to Do<a class="headerlink" href="#what-you-dont-need-to-do" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1405,7 +1405,7 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Open http://localhost:8000 in your browser</span>
 </code></pre></div>
-<p>Then commit and push — the automated workflow will handle deployment.</p>
+<p>Then commit and push - the automated workflow will handle deployment.</p>
 <hr />
 <h2 id="workflow-file-reference">📋 Workflow File Reference<a class="headerlink" href="#workflow-file-reference" title="Permanent link">&para;</a></h2>
 <p>The automation is defined in:</p>
@@ -1426,7 +1426,7 @@
 <li><strong>No leftover files</strong>: Old pages that have been deleted from <code>docs/</code> are automatically removed from the published site</li>
 <li><strong>Clean slate</strong>: Prevents stale content or orphaned files from persisting</li>
 </ul>
-<p>This is safe and intentional — the <code>website</code> branch is <em>meant</em> to be fully managed by the build process.</p>
+<p>This is safe and intentional - the <code>website</code> branch is <em>meant</em> to be fully managed by the build process.</p>
 <hr />
 <h2 id="verification">✅ Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
 <p>After pushing changes to <code>main</code>, you can verify the deployment:</p>
@@ -1443,7 +1443,7 @@
 <h3 id="q-what-if-i-want-to-make-a-quick-fix-without-committing">Q: What if I want to make a quick fix without committing?<a class="headerlink" href="#q-what-if-i-want-to-make-a-quick-fix-without-committing" title="Permanent link">&para;</a></h3>
 <p><strong>A:</strong> You can use the <code>workflow_dispatch</code> trigger to manually run the deploy job without code changes (though this isn't usually necessary).</p>
 <h3 id="q-can-i-edit-files-directly-on-the-website-branch">Q: Can I edit files directly on the <code>website</code> branch?<a class="headerlink" href="#q-can-i-edit-files-directly-on-the-website-branch" title="Permanent link">&para;</a></h3>
-<p><strong>A:</strong> Technically yes, but don't — they'll be overwritten on the next deploy. Always edit on <code>main</code> instead.</p>
+<p><strong>A:</strong> Technically yes, but don't - they'll be overwritten on the next deploy. Always edit on <code>main</code> instead.</p>
 <h3 id="q-how-do-i-add-new-pages-to-the-navigation">Q: How do I add new pages to the navigation?<a class="headerlink" href="#q-how-do-i-add-new-pages-to-the-navigation" title="Permanent link">&para;</a></h3>
 <p><strong>A:</strong> Edit the <code>nav:</code> section in <code>mkdocs.yml</code> on the <code>main</code> branch. The automation will rebuild the navigation menu on the next deploy.</p>
 <h3 id="q-is-there-a-delay-before-changes-go-live">Q: Is there a delay before changes go live?<a class="headerlink" href="#q-is-there-a-delay-before-changes-go-live" title="Permanent link">&para;</a></h3>
@@ -1451,13 +1451,13 @@
 <hr />
 <h2 id="related-resources">🔗 Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../mkdocs.yml">mkdocs.yml</a></strong> — Site configuration (theme, navigation, fonts)</li>
-<li><strong><a href="../.github/workflows/deploy-website.yml">.github/workflows/deploy-website.yml</a></strong> — The automation workflow</li>
-<li><strong><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></strong> — How GitHub Pages works</li>
-<li><strong><a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material Theme</a></strong> — Documentation about the theme used for this site</li>
+<li><strong><a href="../mkdocs.yml">mkdocs.yml</a></strong> - Site configuration (theme, navigation, fonts)</li>
+<li><strong><a href="../.github/workflows/deploy-website.yml">.github/workflows/deploy-website.yml</a></strong> - The automation workflow</li>
+<li><strong><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></strong> - How GitHub Pages works</li>
+<li><strong><a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material Theme</a></strong> - Documentation about the theme used for this site</li>
 </ul>
 <hr />
-<p><em>Last updated: April 2026 — Automation ensures this documentation hub stays current as you and the community contribute.</em></p>
+<p><em>Last updated: April 2026 - Automation ensures this documentation hub stays current as you and the community contribute.</em></p>
 
 
 

@@ -14,21 +14,12 @@ nav_order: 1
 
 GitHub Copilot works in three distinct modes. Each is designed for a different job. You'll use all three in a typical week, but let's start with the one that feels most natural.
 
-```
-┌───────────────────────────────────────────────────────────┐
-│                 GITHUB COPILOT MODES                      │
-├──────────────┬──────────────────┬─────────────────────────┤
-│     ASK      │      PLAN        │         AGENT           │
-├──────────────┼──────────────────┼─────────────────────────┤
-│ Quick Q&A    │ Design First     │ Autonomous Execution    │
-│ Chat in      │ Review Plan      │ Edits Files             │
-│ VS Code      │ Approve First    │ Runs Tests              │
-│              │ Then Code        │ Loops Until Done        │
-│              │                  │                         │
-│ "Explain     │ "Design a login  │ "Build a complete user  │
-│  this error" │ page"            │ authentication system"  │
-└──────────────┴──────────────────┴─────────────────────────┘
-```
+| ASK | PLAN | AGENT |
+| --- | --- | --- |
+| Quick Q&A | Design First | Autonomous Execution |
+| Chat in VS Code | Review Plan | Edits Files |
+|  | Approve First, Then Code | Runs Tests, Loops Until Done |
+| "Explain this error" | "Design a login page" | "Build a complete user authentication system" |
 
 ---
 

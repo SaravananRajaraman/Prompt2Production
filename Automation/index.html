@@ -1000,6 +1000,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#link-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Link Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Link Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-links-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Links Locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-contributors_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Contributors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-file-reference_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow File Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#related-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1274,6 +1346,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#link-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Link Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Link Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-links-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Links Locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-contributors_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Contributors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-file-reference_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow File Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#related-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1449,12 +1593,88 @@
 <h3 id="q-is-there-a-delay-before-changes-go-live">Q: Is there a delay before changes go live?<a class="headerlink" href="#q-is-there-a-delay-before-changes-go-live" title="Permanent link">&para;</a></h3>
 <p><strong>A:</strong> Typically 1-2 minutes for GitHub Actions to run the build and deploy workflow. Once deployed, changes are live instantly.</p>
 <hr />
+<h2 id="link-validation">🔗 Link Validation<a class="headerlink" href="#link-validation" title="Permanent link">&para;</a></h2>
+<p>To ensure documentation links are always correct, the repository includes automated link checking through GitHub Actions.</p>
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p>The validation workflow (<code>.github/workflows/validate-links.yml</code>) runs automatically:</p>
+<ul>
+<li><strong>On every push to <code>main</code></strong> </li>
+<li><strong>On pull requests</strong> to catch broken links before merging</li>
+</ul>
+<p><strong>What it checks:</strong>
+- ✅ All internal markdown links (relative paths like <code>./Getting_Started_Primer.md#anchor</code>)
+- ✅ All external URLs (https://, http://, etc.)
+- ✅ Exact anchor matches (headings must match anchor references precisely)</p>
+<p><strong>How it fails:</strong>
+- 🚫 Broken internal links → workflow fails (prevents bad links from being deployed)
+- 🚫 Invalid external URLs → workflow fails (prevents pointing to non-existent resources)
+- 🚫 Mismatched anchors → workflow fails (prevents "link looks right but doesn't work" issues)</p>
+<h3 id="testing-links-locally">Testing Links Locally<a class="headerlink" href="#testing-links-locally" title="Permanent link">&para;</a></h3>
+<p>You can test links before committing using <code>markdown-link-check</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Install markdown-link-check (one time)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>markdown-link-check
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Test all links in a file</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>markdown-link-check<span class="w"> </span>docs/Learning_Paths.md
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Test all markdown files in docs/</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>markdown-link-check<span class="w"> </span>docs/*.md
+</code></pre></div>
+<p><strong>Output example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>✓ ./FAQ_For_Beginners.md
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>✓ ./Session1_Building_The_Foundation.md#part-1-the-three-interaction-modes
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>✗ ./NonExistent.md (404)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>✗ #broken-anchor (anchor not found)
+</code></pre></div></p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>Link validation is configured in <code>.mlc_config.json</code>:</p>
+<ul>
+<li><strong>Timeout</strong>: 20 seconds per link</li>
+<li><strong>Retries</strong>: 2 attempts for rate-limited responses (429, 503)</li>
+<li><strong>Accepted status codes</strong>: 200, 206 (success), with retry logic for transient failures</li>
+</ul>
+<h3 id="for-contributors_1">For Contributors<a class="headerlink" href="#for-contributors_1" title="Permanent link">&para;</a></h3>
+<p><strong>Before committing</strong>, ensure:
+1. All internal anchor references match actual heading text exactly
+   - ❌ Bad: <code>#my-heading</code> → pointing to heading <code>### Q: My Heading</code>
+   - ✅ Good: <code>#q-my-heading</code> → pointing to heading <code>### Q: My Heading</code></p>
+<ol>
+<li>File paths are correct and relative to the current file</li>
+<li>❌ Bad: <code>[Link](Getting_Started_Primer.md)</code> from <code>docs/</code> (missing <code>./</code>)</li>
+<li>
+<p>✅ Good: <code>[Link](./Getting_Started_Primer.md)</code> from <code>docs/</code></p>
+</li>
+<li>
+<p>External URLs are active and accessible</p>
+</li>
+<li>❌ Broken: <code>https://resource-that-no-longer-exists.com</code></li>
+<li>✅ Good: <code>https://docs.github.com/en/copilot</code></li>
+</ol>
+<p><strong>Testing workflow:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1. Make changes to markdown files
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2. Run `markdown-link-check` locally to verify
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>3. Push to main or create Pull Request
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>4. GitHub Actions automatically validates
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>5. Workflow passes ✅ or fails with details ❌
+</code></pre></div></p>
+<h3 id="workflow-file-reference_1">Workflow File Reference<a class="headerlink" href="#workflow-file-reference_1" title="Permanent link">&para;</a></h3>
+<p>The link validation is defined in:</p>
+<p><strong><code>.github/workflows/validate-links.yml</code></strong></p>
+<p>Key points:
+- <strong>Action</strong>: <code>gaurav-nelson/github-action-markdown-link-check</code>
+- <strong>Scope</strong>: Checks <code>docs/</code> folder and root <code>README.md</code>
+- <strong>Config</strong>: Uses <code>.mlc_config.json</code> for rules and timeouts
+- <strong>Failure behavior</strong>: Workflow fails if any links are broken (prevents merge)</p>
+<hr />
 <h2 id="related-resources">🔗 Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong><a href="../mkdocs.yml">mkdocs.yml</a></strong> - Site configuration (theme, navigation, fonts)</li>
-<li><strong><a href="../.github/workflows/deploy-website.yml">.github/workflows/deploy-website.yml</a></strong> - The automation workflow</li>
+<li><strong><a href="../.github/workflows/deploy-website.yml">.github/workflows/deploy-website.yml</a></strong> - The deployment automation workflow</li>
+<li><strong><a href="../.github/workflows/validate-links.yml">.github/workflows/validate-links.yml</a></strong> - The link validation workflow</li>
+<li><strong><a href="../.mlc_config.json">.mlc_config.json</a></strong> - Link checker configuration</li>
 <li><strong><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></strong> - How GitHub Pages works</li>
 <li><strong><a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material Theme</a></strong> - Documentation about the theme used for this site</li>
+<li><strong><a href="https://github.com/tcort/markdown-link-check">markdown-link-check</a></strong> - The tool used for validation</li>
 </ul>
 <hr />
 <p><em>Last updated: April 2026 - Automation ensures this documentation hub stays current as you and the community contribute.</em></p>

@@ -32,6 +32,10 @@ kramdown:
 plugins:
   - jekyll-github-metadata
 
+# URL Configuration
+url: "https://saravananrajaraman.github.io"
+baseurl: "/Prompt2Production"
+
 # Permalink Structure
 permalink: /:title/
 

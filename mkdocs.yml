@@ -15,24 +15,26 @@ nav:
   - FAQ: FAQ_For_Beginners.md
   - All Links: All_Links.md
   - Examples: examples/README.md
+  - Automation: Automation.md
 
 theme:
   name: material
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
         name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.tabs.sticky

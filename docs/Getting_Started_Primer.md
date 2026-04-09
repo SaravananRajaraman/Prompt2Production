@@ -4,9 +4,9 @@ title: Getting Started Primer
 nav_order: 1
 ---
 
-# Getting Started with GitHub Copilot - 5 Minute Primer
+# GitHub Copilot in 5 Minutes — The Three Modes
 
-> **New to GitHub Copilot?** Start here. This guide teaches you the three core interaction modes and gets you writing your first prompt in under 5 minutes.
+> **New to GitHub Copilot in VS Code?** This is your fastest entry point. Learn Ask, Plan, and Agent modes, then write your first prompt.
 
 ---
 

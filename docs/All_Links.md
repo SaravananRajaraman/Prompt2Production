@@ -1,9 +1,8 @@
-# All Links
+# GitHub Copilot — All Links & Resources
 
-> One file to find them all. Every reference link from both sessions, organised by session and category.
+> Complete reference for GitHub Copilot documentation, community resources, and learning materials.
 >
-> **Session 1:** Building the Foundation - Ask/Plan/Agent modes, context engineering, custom instructions, prompt files, custom agents  
-> **Session 2:** Advanced Agent Capabilities - Sub-agents & orchestration, agent skills, agent hooks
+> Covers everything from **GitHub Copilot fundamentals** (modes, context, prompting) to **advanced orchestration** (agents, skills, hooks, automation).
 
 ---
 
